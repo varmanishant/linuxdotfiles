@@ -1,0 +1,104 @@
+# -*- mode: Text; fill-column: 79; -*-
+
+[options]
+
+allow_bold = true
+audible_bell = false
+browser = firefox
+clickable_url = false
+cursor_blink = system
+cursor_shape = ibeam
+dynamic_title = false
+font = Adobe Courier 10
+font = Andale Mono 10
+font = Anonymous Pro 10
+font = Bitstream Vera Sans Mono 10
+font = Consolas 10
+font = Cousine 10
+font = DejaVu Sans Mono 10
+font = Droid Sans Mono 10
+font = Free Mono Bold 10
+font = Hack 10
+font = Inconsolata 10
+font = Lucida Console 10
+font = Meslo LGS 10
+font = Monaco 10
+font = Roboto Mono 10
+font = Source Code Pro Semibold 10
+font = Lucida Console 11
+mouse_autohide = true
+resize_grip = false
+scroll_on_keystroke = true
+scroll_on_output = false
+scrollback_lines = 0
+search_wrap = true
+urgent_on_bell = true
+use_xft = true
+
+[colors]
+
+# Base16 Standard
+
+background = #121212
+foreground = #f8f8f2
+cursor = #f8f8f2
+
+# 16 Color Space
+
+# black
+color0 = #121212
+color8 = #444444
+# red
+color1 = #ff614d
+color9 = #ff614d
+# green
+color2 = #50c878
+color10 = #50c878
+# yellow
+color3 = #d2b55b
+color11 = #d2b55b
+# blue
+color4 = #128bd5
+color12 = #128bd5
+# magenta
+color5 = #f92672
+color13 = #f92672
+# cyan
+color6 = #1fd6ff
+color14 = #1fd6ff
+# white
+color7 = #f8f8f2
+color15 = #f8f8f2
+
+## Base16 Monokai
+#
+#background = #272822
+#foreground = #f8f8f2
+#cursor = #f8f8f2
+#
+## 16 Color Space
+#
+## black
+#color0 = #272822
+#color8 = #75715e
+## red
+#color1 = #f92672
+#color9 = #f92672
+## green
+#color2 = #a6e22e
+#color10 = #a6e22e
+## yellow
+#color3 = #e6db74
+#color11 = #e6db74
+## blue
+#color4 = #66d9ef
+#color12 = #66d9ef
+## magenta
+#color5 = #fd971f
+#color13 = #fd971f
+## cyan
+#color6 = #ae81ff
+#color14 = #ae81ff
+## white
+#color7 = #f8f8f2
+#color15 = #f8f8f2

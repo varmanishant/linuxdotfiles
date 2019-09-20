@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<JWM>
+    <WindowStyle>
+        <Font>Noto Sans Medium-9:style=semibold:encoding=utf8:hinting=true</Font>
+        <Width>4</Width>
+        <Height>20</Height>
+        <Corner>0</Corner>
+        <Foreground>#bcbcbc</Foreground>
+        <Background>#121212:#121212</Background>
+        <Outline>#202020</Outline>
+        <Opacity>1</Opacity>
+        <Active>
+            <Foreground>#eeeeee</Foreground>
+            <Background>#121212:#121212</Background>
+            <Outline>#202020</Outline>
+        </Active>
+    </WindowStyle>
+    <TrayStyle>
+        <Font>Noto Sans Medium-9</Font>
+        <Background>#121212</Background>
+        <Foreground>#eeeeee</Foreground>
+        <Outline>#000000</Outline>
+        <Opacity>1</Opacity>
+        <Active>
+            <Foreground>#eeeeee</Foreground>
+            <Background>#262626:#262626</Background>
+            <Outline>#000000</Outline>
+        </Active>
+    </TrayStyle>
+    <PagerStyle>
+        <Outline>#000000</Outline>
+        <Foreground>#121212</Foreground>
+        <Background>#121212</Background>
+        <Text>#eeeeee</Text>
+        <Active>
+            <Foreground>#285577</Foreground>
+            <Background>#285577</Background>
+        </Active>
+    </PagerStyle>
+    <MenuStyle>
+        <Font>Noto Sans Medium-9</Font>
+        <Foreground>#eeeeee</Foreground>
+        <Background>#121212</Background>
+        <Outline>#000000</Outline>
+        <Active>
+            <Foreground>#eeeeee</Foreground>
+            <Background>#285577</Background>
+        </Active>
+        <Opacity>1</Opacity>
+    </MenuStyle>
+    <PopupStyle>
+        <Font>Noto Sans Medium-9</Font>
+        <Foreground>#000000</Foreground>
+        <Background>#9e9e9e</Background>
+    </PopupStyle>
+    <Desktops width="4" height="1">
+        <Background type="solid">#121212</Background>
+    </Desktops>
+</JWM>

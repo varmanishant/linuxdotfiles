@@ -1,0 +1,240 @@
+# TODO
+
+# 1. Application Launcher Menu
+# 2. Sound, Processor, Memory, Network, Battery, Date
+# 3. Desktop Menu (Restart Etc.)
+# 4. Title Bar Menu
+# 5. Window List Menu
+# 6. Mouse Icons
+# 7. Gradience + Border
+
+# Resources
+
+# 1. http://www.fvwm.org/documentation/faq/
+# 2. https://fvwmforums.org/wiki/CookBook/
+
+# Global Variables
+
+SetEnv icons $[HOME]/.icons
+SetEnv wallpapers $[HOME]/.wallpapers
+
+# Module Configurations
+
+# Panel - FvwmButtons
+
+DestroyModuleConfig Panel:*
+# TODO: Hardcoding.
+*Panel: Geometry $[vp.width]x24-0+744
+*Panel: Rows 1
+*Panel: Columns 10
+*Panel: Font "xft:Noto Sans::size=9:antialias=True"
+*Panel: Colorset 0
+*Panel: (1x1, Container(Columns 5 Colorset 0))
+*Panel: (1x1, Frame 0)
+*Panel: (Icon $[icons]/show-desktop.xpm, Action ShowDesktop, Frame 0)
+*Panel: (Icon $[icons]/terminal-emulator.xpm, Action exec start-kitty, Frame 0)
+*Panel: (2x1, Frame 0)
+*Panel: (End)
+*Panel: (7x1, Swallow WindowList Nop, Frame 0)
+*Panel: (1x1, Container(Columns 3 Colorset 0))
+*Panel: (1x1, Frame 0)
+*Panel: (1x1, Id "Personal", Title "0", Action (Mouse 1) GotoDesk 0 0, Frame 0)
+*Panel: (1x1, Id "Work", Title "1", Action (Mouse 1) GotoDesk 0 1, Frame 0)
+*Panel: (End)
+*Panel: (1x1, Container(Columns 1 Colorset 0))
+*Panel: (1x1, Frame 0)
+*Panel: (End)
+
+# WindowList - FvwmIconMan
+
+DestroyModuleConfig WindowList:*
+*WindowList: ButtonGeometry 128X24
+*WindowList: ReliefThickness 0
+*WindowList: Font "xft:Noto Sans::size=9:antialias=True"
+*WindowList: Colorset 0
+*WindowList: FocusColorset 2
+*WindowList: SelectColorset 2
+*WindowList: FocusAndSelectColorset 2
+*WindowList: IconAndSelectColorset 2
+*WindowList: DrawIcons always
+*WindowList: Format "%c"
+*WindowList: Resolution desk
+*WindowList: UseWinList true
+*WindowList: Sort weighted
+*WindowList: SortWeight 1 class=kitty
+*WindowList: SortWeight 2 class=thunar
+*WindowList: SortWeight 3 class=sublime-text
+*WindowList: SortWeight 4 class=sublime-merge
+*WindowList: SortWeight 5 class=mpv
+*WindowList: SortWeight 6 class=vlc
+*WindowList: SortWeight 7 class=transmission
+*WindowList: SortWeight 8 class=google-chrome
+*WindowList: Action Mouse 1 A sendcommand IconManClick
+*WindowList: Action Mouse 2 A sendcommand Nop
+*WindowList: Action Mouse 3 A sendcommand "Menu MenuIconOps"
+*WindowList: Tips always
+*WindowList: TipsFont "xft:Noto Sans::size=9:antialias=True"
+*WindowList: ManagerGeometry 128x24-0+744
+
+# Functions
+
+# Function: StartFunction
+
+# The start function is run right after fvwm is done reading the config file.
+# This function run after each restart so using Test (Init) or Test (Restart)
+# can further control actions that are run during the first time run (Init) or
+# actions that are run after a restart.
+
+DestroyFunc StartFunction
+AddToFunc StartFunction
++ I Test Exec exec feh --bg-scale $[wallpapers]/gradient-gray.png
++ I Module FvwmButtons Panel
++ I Module FvwmIconMan WindowList
+
+# Function: MoveClickX $0 $1 $2
+
+# This function runs variable actions on different events and is used with the
+# mouse bindings to allow different actions depending on if the mouse is
+# clicked, double clicked or moved. Use "Nop" for no action.
+
+# $0 - Action on Mouse Hold + Move
+# $1 - Action on Mouse Click
+# $2 - Action on Mouse DoubleClick
+#
+# Example: Mouse 1 T A MoveClickX Move Raise Maximize
+
+# Click title bar to raise, double click to maximize, and click+move to move
+# the window.
+
+DestroyFunc MoveClickX
+AddToFunc MoveClickX
++ M $0
++ C $1
++ D $2
+
+# Function: ShowDesktop
+
+DestroyFunc ShowDesktop
+AddToFunc ShowDesktop
++ I All (CurrentPage, Iconic, State 1) RestoreDesktop
++ I TestRc (Match) Break
++ I All (CurrentPage, !Iconic, !State 1) ThisWindow State 1 True
++ I All (CurrentPage, !Iconic, State 1) Iconify
+
+# Function: RestoreDesktop
+
+DestroyFunc RestoreDesktop
+AddToFunc RestoreDesktop
++ I All (CurrentPage, Iconic, State 1) Iconify off
++ I All (CurrentPage, State 1) ThisWindow State 1 False
+
+# Function: IconManClick
+
+# This function is run from FvwmIconMan when the button is clicked.
+
+DestroyFunc IconManClick
+AddToFunc IconManClick
++ I ThisWindow (Raised, !Shaded, !Iconic, CurrentPage) Iconify
++ I TestRc (Match) Break
++ I ThisWindow (!Raised) Raise
++ I ThisWindow (Shaded) WindowShade
++ I ThisWindow (Iconic) Iconify
++ I ThisWindow (AcceptsFocus) FlipFocus
+
+# Colorset
+
+Colorset 0 fg #dddddd, bg #333333, hi, sh, Plain, NoShape
+Colorset 0 VGradient 256 1 #181818 50 #262626 50 #181818
+Colorset 1 fg #777777, bg #333333, hi, sh, Plain, NoShape
+Colorset 1 VGradient 256 1 #181818 50 #262626 50 #181818
+Colorset 2 fg #dddddd, bg #181818, hi, sh, Plain, NoShape
+Colorset 2 VGradient 256 1 #333333 50 #262626 50 #333333
+Colorset 3 fg #dddddd, bg #121212, hi, sh, Plain, NoShape
+
+# General Styles
+
+DesktopName 0 "Personal"
+DesktopName 1 "Work"
+DesktopSize 1x1
+
+OpaqueMoveSize -1
+HideGeometryWindow
+EdgeResistance -1
+EwmhBaseStruts 0 0 0 24
+
+DefaultFont "xft:Noto Sans:Semibold:size=9:antialias=True"
+
+Style * ClickToFocus, MouseFocusClickRaises
+Style * Colorset 1, HilightColorset 0
+Style * BorderWidth 1, HandleWidth 1
+Style * BorderColorset 3, HilightBorderColorset 3
+Style * FvwmBorder, FirmBorder, UseDecor FvwmDecor
+Style * NoIcon
+
+Style ConfirmQuit PositionPlacement Center, WindowListSkip, Layer 6
+Style FvwmIdent WindowListSkip
+
+Style Panel Sticky, WindowListSkip
+Style Panel NoFocus, NoTitle, NoHandles, BorderWidth 0, !Iconifiable
+
+# Decor Styles
+
+DestroyDecor FvwmDecor
+AddToDecor FvwmDecor
++ ButtonStyle All - Clear
++ ButtonStyle All -- Flat
++ TitleStyle Centered Height 24 -- Flat
++ AddButtonStyle 1 ActiveUp (Pixmap $[icons]/maximize.xpm -- Flat)
++ AddButtonStyle 1 ActiveDown (Pixmap $[icons]/maximize.xpm -- Flat)
++ AddButtonStyle 1 Inactive (Pixmap $[icons]/maximize.xpm -- Flat)
++ AddButtonStyle 2 ActiveUp (Pixmap $[icons]/close.xpm -- Flat)
++ AddButtonStyle 2 ActiveDown (Pixmap $[icons]/close.xpm -- Flat)
++ AddButtonStyle 2 Inactive (Pixmap $[icons]/close.xpm -- Flat)
++ AddButtonStyle 4 ActiveUp (Pixmap $[icons]/maximize.xpm -- Flat)
++ AddButtonStyle 4 ActiveDown (Pixmap $[icons]/maximize.xpm -- Flat)
++ AddButtonStyle 4 Inactive (Pixmap $[icons]/maximize.xpm -- Flat)
++ AddButtonStyle 6 ActiveUp (Pixmap $[icons]/minimize.xpm -- Flat)
++ AddButtonStyle 6 ActiveDown (Pixmap $[icons]/minimize.xpm -- Flat)
++ AddButtonStyle 6 Inactive (Pixmap $[icons]/minimize.xpm -- Flat)
+
+# Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+
+# 1 - Open the WindowOps menu.
+# 2 - Close on single click, Destory on double click.
+# 4 - Maximize (right/middle button will only maximize vertical/horizontal)
+# 6 - Iconify (minimize)
+
+Mouse 1 1 A Menu MenuWindowOps
+Mouse 1 2 A MoveClickX Nop Close Destroy
+Mouse 1 4 A Maximize 100 100
+Mouse 2 4 A Maximize 0 100
+Mouse 3 4 A Maximize 100 0
+Mouse 1 6 A Iconify
+
+# Keyboard
+
+Silent Key Tab A M WindowList Root c c CurrentDesk, NoGeometry, CurrentAtEnd
+
+Silent Key d A 4 ShowDesktop
+Silent Key r A 4 Restart
+
+Silent Key c A 4 Exec start-google-chrome
+Silent Key e A 4 Exec start-thunar
+Silent Key i A 4 Exec set-x-icons
+Silent Key l A 4 Exec slock
+Silent Key t A 4 Exec start-kitty
+Silent Key x A 4 Exec dmenu_run
+
+# Root Menu
+
+# The root menu will popup with a click in the root window or using Alt-F1.
+
+DestroyMenu MenuFvwmRoot
+AddToMenu MenuFvwmRoot "Fvwm" Title
++ "Terminal" Exec exec start-kitty
++ "" Nop
++ "Refresh" Refresh
++ "Restart" Restart
++ "Quit" Module FvwmScript FvwmScript-ConfirmQuit
+
+MenuStyle * MenuColorset 0, ActiveColorset 2, GreyedColorset 1, TitleColorset 0

@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<!-- TODO: Organize -->
+<JWM>
+    <Include>$HOME/.jwm.theme</Include>
+    <RootMenu height="24" onroot="12">
+        <Program icon="mimetypes/pdf" label="Atril">
+            atril
+        </Program>
+        <Program icon="apps/audio-player" label="Audacious">
+            audacious
+        </Program>
+        <Program icon="apps/azure-data-studio" label="Azure Data Studio">
+            azuredatastudio
+        </Program>
+        <Program icon="apps/google-chrome" label="Chrome">
+            google-chrome-stable
+        </Program>
+        <Program icon="utilities/file-manager" label="File Manager">
+            start-file-manager
+        </Program>
+        <Program icon="apps/firefox" label="Firefox">
+            firefox
+        </Program>
+        <Program icon="apps/video-player" label="Gnome MPV">
+            gnome-mpv
+        </Program>
+        <Menu icon="apps/office" label="Office">
+            <Program icon="apps/word" label="WPS Writer">
+                start-word
+            </Program>
+            <Program icon="apps/excel" label="WPS Spreasheet">
+                start-excel
+            </Program>
+            <Program icon="apps/powerpoint" label="WPS Presentation">
+                start-powerpoint
+            </Program>
+        </Menu>
+        <Program icon="apps/sublime-text" label="Sublime Text">
+            sublime-text
+        </Program>
+        <Program icon="utilities/terminal-emulator" label="Terminal">
+            start-terminal
+        </Program>
+        <Program icon="utilities/text-editor" label="Text Editor">
+            start-text-editor
+        </Program>
+        <Separator />
+        <Menu icon="utilities/utilities" label="Utilities">
+            <Program icon="apps/fonts" label="Fonts">
+                xfontsel
+            </Program>
+            <Program icon="apps/properties" label="Window Properties">
+                xprop | xmessage -file -
+            </Program>
+            <Program icon="apps/information" label="Window Information">
+                xwininfo | xmessage -file -
+            </Program>
+        </Menu>
+        <!-- TODO: Find a replacement. -->
+        <Menu icon="utilities/black-monitor" label="Window Manager">
+            <Program icon="apps/restart" label="Restart">
+                restart-jwm
+            </Program>
+            <Exit icon="apps/logout" label="Logout" confirm="true"/>
+        </Menu>
+        <!-- TODO: Find a replacement. -->
+        <Menu icon="utilities/blue-monitor" label="System">
+            <Program icon="apps/run" label="Run">
+                rofi -show run
+            </Program>
+            <Program icon="apps/lock" label="Lock">
+                lock-x
+            </Program>
+            <Program icon="apps/restart" label="Reboot">
+                reboot-system
+            </Program>
+            <Program icon="apps/suspend" label="Suspend">
+                suspend-system
+            </Program>
+            <Program icon="apps/hibernate" label="Hibernate">
+                hibernate-system
+            </Program>
+            <Program icon="apps/shutdown" label="Off">
+                shutdown-system
+            </Program>
+        </Menu>
+    </RootMenu>
+    <IconPath>
+        /usr/local/share/jwm
+    </IconPath>
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+    <DoubleClickDelta>2</DoubleClickDelta>
+    <FocusModel>click</FocusModel>
+    <SnapMode distance="20">border</SnapMode>
+    <MoveMode>opaque</MoveMode>
+    <ResizeMode>opaque</ResizeMode>
+    <Mouse context="border" button="1">resize</Mouse>
+    <Mouse context="border" button="2">move</Mouse>
+    <Mouse context="border" button="-3">window</Mouse>
+    <Mouse context="close" button="-1">close</Mouse>
+    <Mouse context="close" button="-2">close</Mouse>
+    <Mouse context="close" button="-3">close</Mouse>
+    <Mouse context="icon" button="1">resize</Mouse>
+    <Mouse context="icon" button="-2">close</Mouse>
+    <Mouse context="icon" button="-3">window</Mouse>
+    <Mouse context="maximize" button="-1">maximize</Mouse>
+    <Mouse context="maximize" button="-2">maxv</Mouse>
+    <Mouse context="maximize" button="-3">maxh</Mouse>
+    <Mouse context="minimize" button="-1">minimize</Mouse>
+    <Mouse context="minimize" button="-2">close</Mouse>
+    <Mouse context="minimize" button="-3">shade</Mouse>
+    <Mouse context="root" button="3">exec:rofi -show window</Mouse>
+    <Mouse context="root" button="4">ldesktop</Mouse>
+    <Mouse context="root" button="5">rdesktop</Mouse>
+    <Mouse context="title" button="1">move</Mouse>
+    <Mouse context="title" button="-2">close</Mouse>
+    <Mouse context="title" button="3">window</Mouse>
+    <Key key="Down">down</Key>
+    <Key key="Escape">escape</Key>
+    <Key key="Left">left</Key>
+    <Key key="Return">select</Key>
+    <Key key="Right">right</Key>
+    <Key key="Up">up</Key>
+    <Key key="XF86AudioLowerVolume">exec:amixer -q sset Master,0 5%-</Key>
+    <Key key="XF86AudioMute">exec:amixer -q sset Master,0 toggle</Key>
+    <Key key="XF86AudioRaiseVolume">exec:amixer -q sset Master,0 5%+</Key>
+    <Key key="XF86MonBrightnessDown">exec:light -S 10</Key>
+    <Key key="XF86MonBrightnessUp">exec:light -A 10</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key mask="S" key="F11">fullscreen</Key>
+    <Key mask="S" key="F12">maximize</Key>
+    <Key mask="4" key="#">desktop#</Key>
+    <Key mask="4" key="Down">maxbottom</Key>
+    <Key mask="4" key="Left">maxleft</Key>
+    <Key mask="4" key="Right">maxright</Key>
+    <Key mask="4" key="Up">maxtop</Key>
+    <Key mask="4" key="a">exec:xrandr --auto</Key>
+    <Key mask="4" key="c">exec:dmenu_run</Key>
+    <Key mask="4" key="d">showdesktop</Key>
+    <Key mask="4" key="e">exit</Key>
+    <Key mask="4" key="f">fullscreen</Key>
+    <Key mask="4" key="i">exec:x-icons</Key>
+    <Key mask="4" key="j">root:1</Key>
+    <Key mask="4" key="l">exec:lock-x</Key>
+    <Key mask="4" key="m">maximize</Key>
+    <Key mask="4" key="o">exec:xset dpms force off</Key>
+    <Key mask="4" key="q">exec:qutebrowser</Key>
+    <Key mask="4" key="r">exec:app-jwm-restart</Key>
+    <Key mask="4" key="s">exec:maim screenshot.png</Key>
+    <Key mask="4" key="t">exec:start-terminal</Key>
+    <Key mask="4" key="v">exec:rofi -show drun</Key>
+    <Key mask="4" key="w">exec:x-wallpapers</Key>
+    <Key mask="4" key="x">exec:rofi -show run</Key>
+    <Key mask="4" key="z">exec:rofi -show window</Key>
+    <Key mask="4S" key="#">send#</Key>
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="AS" key="Tab">prevstacked</Key>
+    <Key mask="CA" key="Down">ddesktop</Key>
+    <Key mask="CA" key="Left">ldesktop</Key>
+    <Key mask="CA" key="Right">rdesktop</Key>
+    <Key mask="CA" key="Up">udesktop</Key>
+    <IconPath>$HOME/.icons</IconPath>
+    <!-- Tray
+    <Tray x="0" y="-1" height="32" autohide="off">
+        <TrayButton icon="utilities/utilities">
+            root:1
+        </TrayButton>
+        <Spacer width="2"/>
+        <TrayButton icon="places/show-desktop">
+            showdesktop
+        </TrayButton>
+        <Spacer width="2"/>
+        <TrayButton icon="utilities/terminal-emulator">
+            exec:start-terminal
+        </TrayButton>
+        <Spacer width="2"/>
+        <TrayButton icon="utilities/file-manager">
+            exec:start-file-manager
+        </TrayButton>
+        <Spacer width="2"/>
+        <TrayButton icon="utilities/text-editor">
+            exec:start-text-editor
+        </TrayButton>
+        <Spacer width="16"/>
+        <TaskList labeled="false"/>
+        <Spacer width="2"/>
+        <Pager labeled="true"/>
+        <Spacer width="2"/>
+        <Dock spacing="4"/>
+        <Spacer width="2"/>
+        <Clock format="%H:%M %b %d">
+            <Button mask="123">exec:xclock</Button>
+        </Clock>
+    </Tray>
+    -->
+</JWM>
