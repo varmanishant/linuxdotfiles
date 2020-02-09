@@ -1,0 +1,11 @@
+font=DejaVu Sans Mono 10
+anchor=bottom-right
+background-color=#333333ee
+border-color=#444444ee
+[urgency=low]
+background-color=#333333ee
+border-color=#444444ee
+[urgency=high]
+background-color=#00578fee
+border-color=#0378a6ee
+
