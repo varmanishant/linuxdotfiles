@@ -1,0 +1,5 @@
+set default-bg "#4c4c4c"
+set recolor-darkcolor "#bcbcbc"
+set recolor-lightcolor "#262626"
+set window-icon $HOME/.icons/pdf.png
+show-recent 0
