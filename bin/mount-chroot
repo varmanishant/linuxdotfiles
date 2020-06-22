@@ -1,0 +1,27 @@
+#!/usr/bin/dash
+
+rootfs=$1
+
+cd "${rootfs}"
+
+sudo cp /etc/resolv.conf etc/resolv.conf
+
+if ! mountpoint -q proc; then
+    sudo mount -t proc proc proc/
+fi
+
+if ! mountpoint -q sys; then
+    sudo mount -t sysfs sys sys/
+fi
+
+if ! mountpoint -q dev; then
+    sudo mount -o bind /dev dev/
+fi
+
+if ! mountpoint -q dev/pts; then
+    sudo mount -o bind /dev/pts dev/pts
+fi
+
+if ! mountpoint -q dev/shm; then
+    sudo mount -o bind /dev/shm dev/shm
+fi

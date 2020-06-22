@@ -1,0 +1,86 @@
+#!/usr/bin/bash
+
+# TODO Define the term "cleanup"!
+# TODO Avoid mixing short and long command arguments.
+
+# Global Variables
+
+dotfiles="${HOME}/linuxdotfiles"
+scratch="${HOME}/scratch"
+
+# Functions
+
+move-if-exists() {
+    # Args
+    #     1: Source Directory
+    #     2: Target Directory
+    mkdir -p "${2}"
+    if [ -d "${1}" ]; then
+        mv "${1}" "${2}"
+    fi
+}
+
+sync-file() {
+    # Args
+    #     1: Source Directory
+    #     2: Destination Directory
+    #     3: File
+    mkdir -p "${2}"/$(dirname "${3}")
+    cp "${1}/${3}" "${2}/${3}"
+}
+
+sync-link() {
+    # Args
+    #     1: Source Directory
+    #     2: Destination Directory
+    #     3: File
+    mkdir -p "${2}"/$(dirname "${3}")
+    ln -sf "${1}/${3}" "${2}/${3}"
+}
+
+# Workflow
+
+# Temporary Folder
+
+mkdir -p "${scratch}"
+
+# Git Restore
+
+cd "${dotfiles}"
+git checkout -q .
+git clean -fdqx 1> /dev/null
+
+# System
+
+sudo dmesg --clear
+sudo pacman -Sc --noconfirm 1> /dev/null
+sudo find /var/log -type f -delete
+sudo find /var/log/journal -name "*.journal" | xargs sudo rm -f
+
+# Application Folders
+
+rm -rf "${HOME}/.cache/"*
+rm -rf "${HOME}/.ghc/"
+rm -rf "${HOME}/.local/share/"
+rm -rf "${HOME}/.racket/"
+
+# Application Files
+
+rm -f "${HOME}/.bash_history"
+rm -f "${HOME}/.dash_history"
+rm -f "${HOME}/.node_repl_history"
+rm -f "${HOME}/.python_history"
+rm -f "${HOME}/.scheme_history"
+rm -f "${HOME}/.viminfo"
+rm -f "${HOME}/.zsh_history"
+
+# Restore
+
+dconf load /com/gexperts/Tilix/ < "${HOME}/.config/tilix/tilix.conf"
+
+# TODO: Downloads Folder
+# TODO: Apps Folder
+# TODO: Chroots
+# TODO: Chrome Console
+
+echo "System cleanup completed."

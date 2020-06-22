@@ -1,0 +1,43 @@
+# TODO: Make rc as the default shell.
+SHELL=rc
+
+sign='> '
+
+fn a {
+
+    # TODO: Should this folder be owned by the user?
+    start-silently acme -m /mnt/acme $home/.acme
+}
+
+fn cd {
+    builtin cd $1 &&
+    prompt=(`{basename `{pwd}}^$sign)
+}
+
+fn fd {
+    builtin fd --color never $*
+}
+
+fn g+ {
+    cmd='find -type f'
+    if(git rev-parse --is-inside-work-tree >[1]/dev/null >[2]/dev/null)
+        cmd='git ls-files'
+    # FIXME: This doesn't work with files with spaces.
+    eval $cmd | xargs g $*
+}
+
+fn ll {
+    ls -lrt
+}
+
+fn pwd {
+    if(~ $#dir 0)
+        dir=`{/bin/pwd}
+    echo $dir
+}
+
+fn python {
+    builtin python -q $*
+}
+
+cd `{pwd}

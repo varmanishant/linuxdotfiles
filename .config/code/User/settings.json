@@ -1,0 +1,53 @@
+{
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 2,
+    "editor.fontFamily": "'DejaVu Sans Mono', 'Source Code Pro', Monospace",
+    "editor.fontSize": 14,
+    "editor.lineNumbers": "on",
+    "editor.folding": true,
+    "editor.glyphMargin": true,
+    "editor.minimap.enabled": true,
+    "editor.smoothScrolling": true,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "editor.wordWrapColumn": 79,
+    "workbench.colorTheme": "Monokai",
+    "workbench.editor.showTabs": true,
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.visible": true,
+    "workbench.colorCustomizations": {
+        "[Monokai Dimmed]": {
+            "editorCursor.foreground": "#c5c8c6"
+        },
+        "[Monokai]": {
+            "terminal.background":"#121212",
+            "terminal.foreground":"#f8f8f2",
+            "terminalCursor.background":"#f8f8f2",
+            "terminalCursor.foreground":"#f8f8f2",
+            "terminal.ansiBlack":"#121212",
+            "terminal.ansiBrightBlack":"#121212",
+            "terminal.ansiRed":"#ff614d",
+            "terminal.ansiBrightRed":"#ff614d",
+            "terminal.ansiGreen":"#50c878",
+            "terminal.ansiBrightGreen":"#50c878",
+            "terminal.ansiYellow":"#d2b55b",
+            "terminal.ansiBrightYellow":"#d2b55b",
+            "terminal.ansiBlue":"#128bd5",
+            "terminal.ansiBrightBlue":"#128bd5",
+            "terminal.ansiMagenta":"#f92672",
+            "terminal.ansiBrightMagenta":"#f92672",
+            "terminal.ansiCyan":"#1fd6ff",
+            "terminal.ansiBrightCyan":"#1fd6ff",
+            "terminal.ansiBrightWhite":"#f8f8f2",
+            "terminal.ansiWhite":"#f8f8f2"
+        }
+    },
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.fontFamily": "Lucida Console",
+    "terminal.integrated.fontWeightBold": "normal",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.rendererType": "auto",
+    "terminal.integrated.shell.linux": "/bin/bash"
+}

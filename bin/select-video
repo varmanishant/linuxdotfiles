@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+videos='.*\.(3gp|asf|avi|dat|flv|m4v|mkv|mp4|mpeg|webm)'
+
+dir="${HOME}/data"
+
+file=$(find "${dir}" -regextype posix-extended -regex "${videos}" | fzf)
+
+if [ "${file}" ]; then
+    start-silently mpv "${file}";
+else
+    echo "No Selection";
+fi

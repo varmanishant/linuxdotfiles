@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+
+# TODO: Can this be improved?
+source $HOME/.zshrc
+
+dir="${HOME}/.config/kitty/themes/"
+
+file=$(find "${dir}" -type f | sort -r | fzf)
+
+if [ ! -z "${file}" -a "${file}" != " " ]; then
+    start-kitty @ set-colors --all --configured "${file}"
+else
+    echo "No Selection";
+fi

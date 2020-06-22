@@ -1,0 +1,18 @@
+wallpaper="${HOME}/.wallpapers/solid-blue.png"
+
+xrdb -load "${HOME}"/.Xresources
+feh --bg-scale "${wallpaper}"
+
+xhost +local:
+
+# synclient TapButton1=1
+# synclient PalmDetect=1
+# synclient PalmMinWidth=8
+# synclient PalmMinZ=100
+
+# 2bwm
+
+start-silently "${HOME}"/src/2bwm/2bwm
+start-silently "${HOME}"/src/bmpanel/bmpanel \
+    "${HOME}"/src/bmpanel/themes/darkmini
+urxvt

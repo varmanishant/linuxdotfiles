@@ -1,0 +1,16 @@
+{
+	"color_scheme": "Monokai.sublime-color-scheme",
+	"font_face": "DejaVu Sans Mono",
+	"font_size": 10.5,
+	"gutter": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_numbers": false,
+	"margin": 4,
+	"scroll_speed": 1.0,
+	"theme": "Default.sublime-theme",
+	"word_wrap": false,
+	"wrap_width": 79
+}

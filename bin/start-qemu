@@ -1,0 +1,23 @@
+#!/usr/bin/dash
+
+# TODO Network, Audio, Mount, Zoom To Fit
+# For higher resolutions install:
+# vmware drivers xf86-video-vmware and xf86-input-vmmouse and use the -vga
+# vmware switch.
+
+image=$1
+
+qemu-system-i386 \
+    -chardev spicevmc,id=spicechannel0,name=vdagent \
+    -cpu host,hv_relaxed,hv_spinlocks=0x1fff,hv_vapic,hv_time \
+    -device intel-iommu \
+    -device virtio-serial-pci \
+    -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 \
+    -enable-kvm \
+    -hda "${image}" \
+    -m 3G \
+    -machine q35,accel=kvm \
+    -smp cpus=2 \
+    -soundhw hda \
+    -spice port=5930,disable-ticketing \
+    -daemonize

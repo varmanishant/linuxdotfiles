@@ -1,0 +1,99 @@
+Applications
+============
+
+Adobe Digital Editions (EPub)
+Adobe Reader
+AutoHotKey
+BreeZip
+Bulk Rename Utility
+Disk Genius
+FreeOffice
+HexChat
+Hyper-V
+MPV Player
+NoMachine
+Notepad++
+PuTTy
+PDF Reader by Xodo
+Sublime Text
+TigerVNC
+VcXsrv
+WinDjView
+WinSCP
+
+Settings
+========
+
+Sans Font: Calibri
+
+System Maintenance
+==================
+
+TODO: Move this to Windows Script.
+1. Do "Clear Activity History" once in a while.
+2. Clear PowerShell history: del (Get-PSReadlineOption).HistorySavePath
+
+Hyper-V
+=======
+
+1. Use VcXsrv and setup a Windows X Server.
+2. Setup an Internal Virtual Switch to get a static IP from Guest to Host.
+3. Add DNS entry for Hyper-V machine.
+
+TigerVNC
+========
+
+If you want to see Linux GUI on Windows, you can use TigerVNC to connect to
+the remove X Server running in Linux. See VcXsrv for a better alternative.
+
+Keyboard Shortcuts
+
+F8+f Fullscreen
+F8+z Minimize
+
+1. Don't send system keys to server:
+   FullscreenSystemKeys=0
+2. Resolution:
+   DesktopSize=1366x768 [Single Monitor]
+   DesktopSize= [Multi Monitor]
+3. Resize according to local window size:
+   RemoteResize=0 [Single Monitor]
+   RemoteResize=1 [Multi Monitor]
+4. Fullscreen:
+   FullScreenAllMonitors=0
+5. Use custom compression settings:
+   AutoSelect=0
+   PreferredEncoding=ZRLE
+   CustomCompressLevel=1
+   CompressLevel=1
+   QualityLevel=9
+
+VcXsrv
+======
+
+If you want to see Linux GUI on Windows, you can use start a VcXsrv server on
+Windows and select "Disable access control" to allow access from anywhere.
+
+In the Linux machine do: `export DISPLAY=<host.ip.address>` and start an X
+application to see it in Windows. It is better to use the IP address of
+Hyper-V's "Default Switch".
+
+Since it uses TCP/IP which causes frequent disconnections, do the following
+changes:
+
+Control Panel > Hardware and Sound > Power Options
+
+HDD
+    Turn off hard disk after: Never
+Wireless Adapter Settings
+    Power Saving Mode: Maximum Performance
+Sleep
+    Sleep after: Never
+    System unattended sleep timeout: 0
+    Hibernate after: Never
+
+Control Panel > Network and Internet > Network Connections
+
+Properties > Configure > Power Management
+
+Disable "Allow the computer to turn off this device to save power".

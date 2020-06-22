@@ -1,0 +1,7 @@
+go += RIGHT
+go_up = LEFT
+
+seek_forward = PAGE_DOWN
+seek_backward = PAGE_UP
+menu_page_down = END 
+menu_page_up = HOME

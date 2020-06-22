@@ -1,0 +1,244 @@
+" vim: syntax=vim
+
+" External Programs
+" =================
+
+" https://github.com/BurntSushi/ripgrep
+" https://github.com/jonas/tig
+" https://github.com/junegunn/fzf.git
+" https://github.com/universal-ctags/ctags
+
+" Notes
+" =====
+
+" 1. 't' is a temporary register.
+
+" Utilities
+" =========
+
+function! Start()
+    edit $HOME/scratch/scratch.md
+    edit $HOME/scratch/scratch.txt
+endfunction
+
+function! SynStack()
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction
+command! SynStack call SynStack()
+
+" Settings
+" ========
+
+set autoindent
+set autoread
+set backupdir=$HOME/.backup.d/
+set completeopt-=preview
+set cinoptions+=t0
+set encoding=utf-8
+set expandtab
+set foldlevel=2
+set foldmethod=indent
+set foldnestmax=2
+set hidden
+set ignorecase
+set incsearch
+set laststatus=1
+set lazyredraw
+set noautochdir
+set nofoldenable
+set nohlsearch
+set nonumber
+set noswapfile
+set nowrap
+set path&
+set ruler
+set shiftwidth=4
+set smartcase
+set spelllang=en_us
+set spellsuggest=best,5
+set splitbelow
+set splitright
+set ssop=buffers
+set tabstop=4
+set tags=./tags;
+set textwidth=79
+set timeoutlen=1000
+set ttimeoutlen=0
+set wildcharm=<c-z>
+set wildmenu
+set wildmode=full
+set wrapmargin=0
+
+let &path .= '**'
+
+autocmd BufEnter *.md set filetype=markdown
+
+autocmd VimEnter * if argc() == 0 | call Start() | endif
+
+autocmd CmdwinEnter * map <buffer> <F5> <CR>q:
+
+autocmd FileType make set noexpandtab autoindent shiftwidth=4 tabstop=4
+
+if &term=~'xterm'
+    let &t_EI = "\e[2 q"
+    let &t_SI = "\e[5 q"
+    autocmd VimEnter * normal <Esc>
+endif
+
+" Keyboard Mappings
+" =================
+
+" General
+" =======
+
+nnoremap <Tab> :bnext<CR>
+nnoremap <Down> gj
+nnoremap <Up> gk
+nnoremap Q @@
+nnoremap Y y$
+nnoremap j gj
+nnoremap k gk
+nnoremap n nzz
+nnoremap s :write<CR>
+vnoremap . :normal .<CR>
+vnoremap < <gv
+vnoremap > >gv
+vnoremap S :write!<CR>
+vnoremap s <Esc>:w<CR>gv
+inoremap <C-C> <Esc>:qall!<CR>
+inoremap <C-G> <Esc>:wq!<CR>
+inoremap <C-S> <Esc>:write<CR>
+
+" G
+
+" TODO: Generalize this for all filetypes.
+nnoremap gc mt:%!purge-files<CR>`t
+nnoremap gp gwip
+
+" Square Bracket
+" ==============
+
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [t :tabprevious<CR>
+nnoremap ]t :tabnext<CR>
+
+" Spacebar
+" ========
+
+nnoremap <Space> :CtrlPBuffer<CR>
+
+" Backslash
+" =========
+
+nnoremap <Leader><Leader> :e#<CR>
+nnoremap <Leader>a ggVG
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>c :close<CR>
+nnoremap <Leader>d o<Esc>k
+nnoremap <Leader>e :Vaffle<CR>
+nnoremap <Leader>E :Vaffle expand("%:p:h")<CR>
+nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>g :GFiles<CR>
+nnoremap <Leader>l :ALELint<CR>
+nnoremap <Leader>m :CtrlPMRUFiles<CR>
+nnoremap <Leader>q :qall<CR>
+nnoremap <Leader>r :'{,'}s/\<<C-R>=expand('<cword>')<CR>\>/
+nnoremap <Leader>R :%s/\<<C-R>=expand('<cword>')<CR>\>/
+nnoremap <Leader>s :Rg<Space>
+nnoremap <Leader>u O<Esc>j
+nnoremap <Leader>v :let @_=system("start-terminal zsh -c tig")<CR>
+nnoremap <Leader>w :%s/\s\+$<CR>
+nnoremap <Leader>x :bdelete<CR>
+nnoremap <Leader>X :bufdo bdelete<CR>
+nnoremap <Leader>y :let @+=expand("%:p")<CR>
+nnoremap <Leader>Y :let @+=expand("%:p:h")<CR>
+nnoremap <Leader><Up> :<C-U>move-2<CR>==
+nnoremap <Leader><Down> :<C-U>move+<CR>==
+xnoremap <Leader><Up> :move-2<cr>gv=gv
+xnoremap <Leader><Down> :move'>+<cr>gv=gv
+
+" Ctrl
+" ====
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-Right> <C-]>
+nnoremap <C-Left> <C-T>
+
+" Plugins
+" =======
+
+call plug#begin('$HOME/.unified/bundle')
+Plug 'https://github.com/cocopon/vaffle.vim.git'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+Plug 'https://github.com/junegunn/fzf.vim.git'
+Plug 'https://github.com/junegunn/goyo.vim'
+Plug 'https://github.com/tpope/vim-repeat.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/varmanishant/vim-python.git'
+Plug 'https://github.com/w0rp/ale.git'
+Plug 'https://github.com/wellle/targets.vim.git'
+call plug#end()
+syntax on
+filetype plugin indent on
+
+" Ale
+" ===
+
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = '?'
+
+" FZF
+" ===
+
+set rtp+=~/.fzf
+
+let g:fzf_commands_expect = 'space'
+let g:fzf_launcher = 'start-terminal %s'
+let g:fzf_tmux_width = '50%'
+let g:fzf_layout = {'down': '~40%'}
+
+" Markdown
+" ========
+
+let g:markdown_fenced_languages = [
+    \ 'c',
+    \ 'sh',
+    \ 'html',
+    \ 'python',
+    \ 'sql',
+    \ 'vim'
+\ ]
+
+" Netrw
+" =====
+
+let g:loaded_netrw = 0
+let g:loaded_netrwPlugin = 0
+
+" Theme
+" =====
+
+color base16-standard
+
+" Hacks
+" =====
+
+imap jj <Esc>
+
+hi NonText ctermfg=0
+
+" References
+" ==========
+
+" https://www.vi-improved.org/vimusermanual.pdf
+" https://editorconfig.org
+" https://github.com/dahu/LearnVim
+" https://github.com/romainl/idiomatic-vimrc
+" https://github.com/romainl/the-patient-vimmer

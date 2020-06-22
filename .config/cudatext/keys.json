@@ -1,0 +1,26 @@
+{
+  "cuda_comments,cmt_toggle_line_body" : {
+    "name" : "plugin: Comments: Toggle line comment, at non-space char",
+    "s1" : [
+      "Ctrl+/"
+    ],
+    "s2" : [
+    ]
+  },
+  "cuda_project_man,menu_goto" : {
+    "name" : "plugin: Project Manager: Go to file...",
+    "s1" : [
+      "Ctrl+P"
+    ],
+    "s2" : [
+    ]
+  },
+  "cuda_find_in_files4_pi35,show_dlg" : {
+    "name" : "plugin: Find in Files 4(py35): Find in files...",
+    "s1" : [
+      "Shift+Ctrl+F"
+    ],
+    "s2" : [
+    ]
+  }
+}

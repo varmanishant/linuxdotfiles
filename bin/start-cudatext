@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+
+start-silently \
+    "${APPS}"/cudatext/cudatext \
+    "${@}"

@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+sudo systemctl start bluetooth.service
+# FIXME
+sleep 5
+bluetoothctl connect 22:B0:DE:F3:F3:7D

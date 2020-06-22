@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+
+kitty_home="${HOME}/.config/kitty"
+
+start-kitty --directory "${HOME}" --session "${kitty_home}"/default

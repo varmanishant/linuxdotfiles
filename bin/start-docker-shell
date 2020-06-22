@@ -1,0 +1,117 @@
+#!/bin/bash
+
+# FIXME: Create docker home automatically.
+# FIXME: Race conditions can occur during container creation.
+
+if [[ $# -ne 2 ]]; then
+    echo "You need to supply the image and a container name."
+    exit
+fi
+
+# Configurations
+# ==============
+
+declare -A volmap
+declare -A envmap
+
+image="${1}"
+container="${2}"
+
+volmap=(
+    ["${HOME}/"]="/home/docker/"
+)
+
+envmap=(
+    ["HOST_USER_ID"]="$(id -u)"
+    ["HOST_GROUP_ID"]="$(id -g)"
+)
+
+cmd="/bin/sh"
+
+# General Utilities
+# =================
+
+# TODO: Convert to function.
+
+for k in "${!volmap[@]}"; do
+    volargs+=(-v "${k}:${volmap[${k}]}")
+done
+
+for k in "${!envmap[@]}"; do
+    envargs+=(-e "${k}=${envmap[${k}]}")
+done
+
+confirm() {
+    msg="${1}"
+    read -p "${msg} " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        return 1
+    fi
+}
+
+# Docker Utilities
+# ================
+
+check-docker(){
+    systemctl is-active docker > /dev/null
+}
+
+start-docker(){
+    echo "Starting Docker ... "
+    sudo systemctl start docker
+}
+
+exists-container() {
+    docker ps -a --format "{{.Names}}" | grep -E "^${container}$" > /dev/null;
+}
+
+create-container(){
+    echo "Creating ${container} ... "
+    docker create \
+        "${envargs[@]}" \
+        --name "${container}" \
+        --network host \
+        "${volargs[@]}" \
+        "${image}" > /dev/null \
+        "${cmd}" -c "while true; do sleep infinity; done"
+
+}
+
+check-container() {
+    docker ps --format "{{.Names}}" | grep -E "^${container}$" > /dev/null;
+}
+
+delete-container() {
+    echo "Deleting ${container} ... "
+    docker rm -f "${container}" > /dev/null
+}
+
+retain-container() {
+    now=$(docker inspect --format="{{.Image}}" "${container}")
+    new=$(docker image inspect --format="{{.ID}}" "${image}")
+    if ! { [[ "${now}" = "${new}" ]] || confirm "Retain container?"; }; then
+        delete-container
+        return 1
+    fi
+}
+
+start-container() {
+    echo "Starting ${container} ... "
+    docker start "${container}" > /dev/null
+}
+
+exec-container() {
+    docker exec -it "${container}" "${cmd}" "${args[@]}"
+}
+
+ensure-docker() {
+    check-docker || start-docker
+}
+
+ensure-container() {
+    { { exists-container && retain-container; } || create-container; } && \
+    { check-container  || start-container; }
+}
+
+ensure-docker && ensure-container && exec-container

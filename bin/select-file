@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+dir="${HOME}/data"
+
+file=$(find "${HOME}" -name "*" | fzf)
+
+if [ "${file}" ]; then
+    echo "${file}"
+fi
+
+

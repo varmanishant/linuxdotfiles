@@ -1,0 +1,289 @@
+ FILE ---------------------------------------------------------------- 
+
+
+ vi +n file          load file with cursor at nth line 
+ vi +/pattern file   load file with cursor at 1st instance of pattern 
+ vi file1 fileN      load multiple files 
+ :f                  file info 
+ :f name             set the current file to name 
+ :q                  exit (no changes pending) 
+ :q!                 exit without saving 
+ :qa!                exit all files without saving 
+ :e file             edit file 
+ :e! file            idem & discard changes to current file 
+ :e#                 edit previous file 
+ :r file             insert file 
+ :r !cmd             insert result of command 
+ :x,y r!cmd          idem with lines x to y as input 
+ :w                  save file 
+ :wq                 save file & quit 
+ :w newfile          save buffer as newfile 
+ :w! file            overwrite pre-existing file 
+ :x,y w notes        save lines x to y as file notes 
+ :x,y w >>notes      append lines x to y to file notes 
+ :n                  edit next file in list 
+ :n!                 idem & discard changes to current file 
+ :n file1 fileN      specify new file list & edit 1st file 
+ :n! file1 fileN     idem & discard changes to current file 
+ :rew                rewind file list & edit 1st file 
+ :rew!               idem & discard changes to current file 
+ :args               display file list 
+ :so file            source file 
+
+ note: vi recognizes the variable % as the current file 
+
+
+ MOVEMENT ------------------------------------------------------------ 
+
+
+ ^D  scroll down 1/2 page 
+ ^U  scroll up 1/2 page 
+ ^F  scroll forward one page 
+ ^B  scroll back one page 
+ l   left one character 
+ h   right one character 
+ k   up one line 
+ j   down one line 
+ H   cursor to top of page 
+ M   cursor to middle of page 
+ L   cursor to bottom of page 
+ F   find previous character in current line 
+ f   find next character in current line 
+ w   next word 
+ nw  forward next n words 
+ b   previous word 
+ nb  back previous n words 
+ ^   to 1st non-whitespace character of line 
+ $   to end of line 
+ +   to 1st non-whitespace character of next line 
+ n+  idem & line n 
+ -   to 1st non-whitespace character of previous line 
+ n-  idem & line n 
+ :n  to line n 
+ G   to last line 
+ nG  to line n 
+ )   to next sentence 
+ (   to previous sentence 
+ }   to next paragraph 
+ {   to previous paragraph 
+ %   to nearest match of {}, (), [] 
+ |   to 1st column 
+ n|  to nth column 
+
+
+ EDIT ---------------------------------------------------------------- 
+
+
+ o    insert line below 
+ O    (letter O) insert line above 
+ i    insert at cursor 
+ I    insert at beginning of line 
+ a    append at cursor 
+ A    append at end of line 
+ C    change to end of line 
+ r    replace character under cursor 
+ R    replace characters till <ESC> 
+ s    substitute characters till <ESC> 
+ J    join following line to current line 
+ nJ   join n following lines to current line 
+ xp   swap characters 
+ ddp  swap lines 
+ ~    toggle case of character under cursor 
+ >>   indent line right 
+ <<   unindent line left 
+ n>>  indent n lines right 
+ n<<  unindent n lines left 
+ >%   indent right till matching {}, (), [] (w/ cursor on symbol) 
+ <%   unindent left till matching {}, (), [] (w/ cursor on symbol) 
+ .    repeat last change 
+ n.   repeat last change n times 
+
+
+ CUT/COPY/PASTE ------------------------------------------------------ 
+
+
+ x          cut current character 
+ nx         cut n characters 
+ dw         cut the end of the current word 
+ dd         cut current line 
+ d)         cut current line 
+ d}         cut paragraph 
+ ndd        cut n lines 
+ D          cut from cursor to the end of the line 
+ d/pattern  cut to next pattern 
+ d?pattern  cut to previous pattern 
+ d/G        cut from current line to end of file 
+ d/nG       cut from line n to current line 
+ yw         copy to the end of the current word 
+ yy         copy current line 
+ y)         copy current line 
+ y}         copy paragraph 
+ nyy        copy following n lines 
+ y/pattern  copy to next pattern 
+ y?pattern  copy to previous pattern 
+ y/G        copy from current line to end of file 
+ y/nG       copy from line n to current line 
+ p          paste after 
+ P          paste before 
+
+
+ UNDO/REDO ----------------------------------------------------------- 
+
+
+ u  undo/toggle last change 
+ u  redo/toggle last change 
+ .  (dot) to repeat the current undo/redo operation 
+ U  undo entire change 
+
+
+ FIND ---------------------------------------------------------------- 
+
+
+ /foo  find next foo 
+ /     repeat last search forward 
+ ?foo  find previous foo 
+ ?     repeat last search backwards 
+ n     jump to next match 
+ N     jump to previous match 
+
+
+ MARKING ------------------------------------------------------------- 
+
+
+ Marks are labeled with any single lowercase letter a to z. vi 
+ supports up to twenty-six concurrent marks. 
+
+ mx                  mark current line as x 
+ `x                  move to exact character marked by x 
+ 'x                  move to 1st non-blank character of line marked x 
+ d'x                 cut from mark x to current line 
+ y'x                 yank from mark x to current line 
+ >'x                 indent selection right from mark x to cursor 
+ <'x                 unindent selection left from mark x to cursor 
+ :'x,'y r!cmd        insert result of cmd with marks x to y as input 
+ :'x,'y s/foo/bar/g  substitute foo with bar from marks x to y 
+
+
+ NAMED BUFFERS ------------------------------------------------------- 
+
+
+ Buffer labels begin with " followed by any single lowercase letter 
+ "a to "z. vi supports up to twenty-six concurrent buffers. To append 
+ a buffer, invoke its label capitalized. 
+
+ "xndd  cut from current line to line n into buffer x 
+ "xnyy  yank from current line to line n into buffer x 
+ "xd'y  cut from mark y to current line into buffer x 
+ "xd}   cut paragraph into buffer x 
+ "Xndd  cut from current line to line n appending buffer x 
+ "xp    paste contents of buffer x 
+ :@x    execute contents of buffer x (assumes valid ex commands) 
+
+
+ SUBSTITUTION -------------------------------------------------------- 
+
+
+ :s/x/y        1st instance  of x with y on current line 
+ :s/x/y/g      all instances of x with y on current line 
+ :a,b s/x/y/g  all instances of x with y on lines a to b 
+ :%s/x/y/g     all instances of x with y 
+ &             repeat last substitution 
+
+
+ REGEXP -------------------------------------------------------------- 
+
+
+ [0-9]       matches any single digit 
+ [a-z]       matches any single lowercase letter 
+ [A-Z]       matches any single uppercase letter 
+ \           next character is interpreted literally (\\ = \) 
+ ^           matches beginning of string 
+ $           matches end of string 
+ .           matches any single character 
+ *           matches preceding character zero or more times 
+ x|y         matches x or y 
+ \<          beginning of word 
+ \>          end of word 
+ [...]       matches characters listed in brackets 
+ [^...]      matches characters not listed in brackets 
+
+ examples... 
+
+ /^[0-9]     search for numbers at beginning of line 
+ /foo$       search for foo at end of line 
+ /\<chapter  search for words beginning with chapter 
+ /[cat|dog]  search for cat or dog 
+ /..[^x]     search for any three character string not ending in x 
+ :%s/ *$//g  trim all trailing whitespace 
+ :%s/^M//g   DOS > NIX (to enter ^M type <CTRL>V<CTRL>M) 
+ :%s/$/^M/   double space file 
+ :%g/^$/d    delete all blank lines globally 
+
+
+ WINDOWS ------------------------------------------------------------- 
+
+
+ :E           open current file in new window 
+ :N           open next file in new window 
+ :E file      open file in new window 
+ :N file      open file in new window 
+ :resize +-n  increase/decrease current window size by n lines 
+ ^W           change to next window 
+ ^L           refresh screen 
+
+
+ MISC ---------------------------------------------------------------- 
+
+
+ <ESC>     exit insert mode 
+ :         go to ex mode 
+ :sh       shell (^D returns to vi) 
+ :!cmd     execute cmd 
+ :cd dir   set the working directory 
+ :set all  display all options & corresponding values 
+ :ver      display editor version 
+
+
+ CONTROL CHARACTERS -------------------------------------------------- 
+
+
+ enter <CTRL>V followed by keypress... 
+
+ Symbol  Display  Keypress 
+
+ NULL     none    <CTRL><SHIFT>@ 
+ SOH      ^A      <CTRL>A 
+ STX      ^B      <CTRL>B 
+ ETX      ^C      <CTRL>C 
+ EOT      ^D      <CTRL>D 
+ ENQ      ^E      <CTRL>E 
+ ACK      ^F      <CTRL>F 
+ BEL      ^G      <CTRL>G 
+ BS       ^H      <CTRL>H 
+ HT       TAB     <CTRL>I 
+ LF       <LF>    <CTRL>J 
+ VT       <VT>    <CTRL>K 
+ FF       <FF>    <CTRL>L 
+ CR       <CR>    <CTRL>M 
+ SO       ^N      <CTRL>N 
+ SI       ^O      <CTRL>O 
+ DLE      ^P      <CTRL>P 
+ DC1      ^Q      <CTRL>Q 
+ DC2      ^R      <CTRL>R 
+ DC3      ^S      <CTRL>S 
+ DC4      ^T      <CTRL>T 
+ NAK      ^U      <CTRL>U 
+ SYN      ^V      <CTRL>V 
+ ETB      ^W      <CTRL>W 
+ CAN      ^X      <CTRL>X 
+ EM       ^Y      <CTRL>Y 
+ SUB      ^Z      <CTRL>Z 
+ ESC      ^[      <CTRL><ESC> 
+ FS       ^\      <CTRL>V\ 
+ GS       ^]      <CTRL><SHIFT>] 
+ RS       ^^      <CTRL><SHIFT>^ 
+ US       ^_      <CTRL><SHIFT>_ 
+ DEL      ~       <CTRL>V<DEL> 
+
+
+ ABOUT ---------------------------------------------------------------

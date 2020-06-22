@@ -1,0 +1,12 @@
+#!/usr/bin/dash
+
+from="${1}"
+to="${2}"
+
+sudo iptables \
+    --table nat \
+    --insert PREROUTING \
+    --protocol tcp \
+    --dport "${from}" \
+    --jump REDIRECT \
+    --to-ports "${to}"

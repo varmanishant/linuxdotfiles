@@ -1,0 +1,133 @@
+! Xterm
+! =====
+
+! Ansi Colors
+
+! Base 16 Standard
+
+xterm*background: #121212
+xterm*foreground: #f8f8f2
+xterm*cursorColor: #f8f8f2
+! Black
+xterm*color0: #121212
+xterm*color8: #444444
+! Red
+xterm*color1: #ff614d
+xterm*color9: #ff614d
+! Green
+xterm*color2: #50c878
+xterm*color10: #50c878
+! Yellow
+xterm*color3: #e6db74
+xterm*color11: #e6db74
+! Blue
+xterm*color4: #128bd5
+xterm*color12: #128bd5
+! Magenta
+xterm*color5: #f92672
+xterm*color13: #f92672
+! Cyan
+xterm*color6: #1fd6ff
+xterm*color14: #1fd6ff
+! White
+xterm*color7: #f8f8f2
+xterm*color15: #f8f8f2
+
+! Font
+
+xterm.vt100.faceName: DejaVu Sans Mono:style=Book:antialias=true
+xterm.vt100.faceSize: 10
+xterm.vt100.geometry: 80x24
+
+! General
+
+xterm*allowBoldFonts: false
+xterm*selectToClipboard: true
+xterm*locale: true
+xterm*loginshell: true
+xterm*savelines: 0
+xterm*utf8: 1
+xterm*visualBell: false
+
+! URxvt
+! =====
+
+! Base 16 Standard
+
+URxvt*background: #121212
+URxvt*foreground: #f8f8f2
+URxvt*cursorColor: #f8f8f2
+! Black
+URxvt*color0: #121212
+URxvt*color8: #444444
+! Red
+URxvt*color1: #ff614d
+URxvt*color9: #ff614d
+! Green
+URxvt*color2: #50c878
+URxvt*color10: #50c878
+! Yellow
+URxvt*color3: #e6db74
+URxvt*color11: #e6db74
+! Blue
+URxvt*color4: #128bd5
+URxvt*color12: #128bd5
+! Magenta
+URxvt*color5: #f92672
+URxvt*color13: #f92672
+! Cyan
+URxvt*color6: #1fd6ff
+URxvt*color14: #1fd6ff
+! White
+URxvt*color7: #f8f8f2
+URxvt*color15: #f8f8f2
+
+! Base 16 Ladakh
+
+URxvt*background: #121212
+URxvt*foreground: #f8f8f2
+URxvt*cursorColor: #f8f8f2
+! Black
+URxvt*color0: #121212
+URxvt*color8: #444444
+! Red
+URxvt*color1: #fa3f82
+URxvt*color9: #fa3f82
+! Green
+URxvt*color2: #50c878
+URxvt*color10: #50c878
+! Yellow
+URxvt*color3: #d1d65f
+URxvt*color11: #d1d65f
+! Blue
+URxvt*color4: #61afef
+URxvt*color12: #61afef
+! Magenta
+URxvt*color5: #ff66ff
+URxvt*color13: #ff66ff
+! Cyan
+URxvt*color6: #80daeb
+URxvt*color14: #80daeb
+! White
+URxvt*color7: #f8f8f2
+URxvt*color15: #f8f8f2
+
+! Font
+
+URxvt*font: xft:DejaVu Sans Mono:size=10:autohint=true:antialias=true
+URxvt*boldFont: xft:DejaVu Sans Mono:size=10:autohint=true:antialias=true
+
+! General
+
+URxvt.cursorBlink: true
+URxvt.letterSpace: -1
+URxvt.lineSpace: 0
+URxvt.scrollBar: false
+
+! Keybindings
+
+URxvt.keysym.Control-Shift-N: perl:new-window
+
+! Plugins
+
+URxvt.perl-ext-common: new-window

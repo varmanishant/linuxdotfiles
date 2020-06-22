@@ -1,0 +1,3 @@
+#!/usr/bin/dash
+
+sudo systemctl start docker.service

@@ -1,0 +1,18 @@
+wallpaper="${HOME}/.wallpapers/solid-blue.png"
+
+xrdb -load "${HOME}"/.Xresources
+feh --bg-scale "${wallpaper}"
+
+xhost +local:
+
+# synclient TapButton1=1
+# synclient PalmDetect=1
+# synclient PalmMinWidth=8
+# synclient PalmMinZ=100
+
+# Rio
+
+PATH="${PATH}":"${HOME}"/src/plan9port/bin
+# TODO: Make rc as the default shell.
+SHELL=rc start-silently 9 rio
+SHELL=rc start-silently 9 9term rc -i "${HOME}"/.rcrc

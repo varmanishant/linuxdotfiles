@@ -1,0 +1,14 @@
+adjust-brightness
+connect-bluetooth-chineese
+find -L . -name . -o -type d -prune -o -type l -exec rm {} +
+git add -p
+git commit -m "Fixups"
+git push origin master:master
+git status
+git checkout . ; git clean -fdx
+sudo systemctl start bluetooth.service
+sudo systemctl start docker.service
+sudo systemctl start firewalld.service
+sudo systemctl stop bluetooth.service
+sudo systemctl stop docker.service
+sudo systemctl stop firewalld.service

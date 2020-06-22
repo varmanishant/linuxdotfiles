@@ -1,0 +1,12 @@
+BasedOnStyle: LLVM
+
+AlignAfterOpenBracket: DontAlign
+AlignEscapedNewlines: DontAlign
+AlignTrailingComments: false
+AllowAllArgumentsOnNextLine: false
+AlwaysBreakAfterReturnType: TopLevelDefinitions
+BinPackArguments: true
+BinPackParameters : true
+ColumnLimit: 79
+IndentWidth: 4
+SpacesBeforeTrailingComments: 2

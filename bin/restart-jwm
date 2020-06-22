@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+
+jwm -restart
+feh --bg-scale "${HOME}"/.wallpapers/gradient-gray.png
+restart-tint2

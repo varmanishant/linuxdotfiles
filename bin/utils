@@ -1,0 +1,97 @@
+#!/usr/bin/bash
+
+# => Constants
+
+err_no_file=1
+
+# => Globals
+
+declare -A tasks
+
+declare -A commands
+
+# => General
+
+enqueue() {
+    local name=$1
+    tasks["${name}"]="${name}"
+}
+
+dequeue() {
+    local name=$1
+    unset tasks["${name}"]
+}
+
+quit() {
+    local message="$1"
+    local code="${2}"
+    echo "${message}"
+    exit "${code}"
+}
+
+# TODO: Is this similar to xargs or paralell? If are able to achive the below
+# functionality, then it will work like xargs:
+# printf "a e i o u" | loop vowel
+
+loop() {
+    local cmd="${1}"; shift
+    local args="${@}"
+    for arg in ${args}; do
+        "${cmd}" "${arg}"
+    done
+}
+
+# => Filesystem
+
+need_file() {
+    local file="${1}"
+    if [ ! -f "${file}" ]; then
+        echo "Need a file called ${file}."
+        return "${err_no_file}"
+    fi
+}
+
+need_files() {
+    loop need_file "${@}"
+}
+
+move_if_exists() {
+    local source_directory="${1}"
+    local target_directory="${2}"
+    if [ -d "${target_directory}" ]; then
+        mv "${source_directory}" "${target_directory}"
+    fi
+}
+
+synchronize_links() {
+    local file="${1}"
+    local source_directory="${2}"
+    local target_directory="${3}"
+    mkdir -p "${target_directory}/$(dirname ${file})"
+    ln -sf "${source_directory}/${file}" "${target_directory}/${file}"
+}
+
+# => Git
+
+git_branch() {
+    git symbolic-ref -q --short HEAD
+}
+
+git_tag() {
+    git describe --tags
+}
+
+git_clone() {
+    local git_url="${1}"
+    local target_folder="${2}"
+    if [ ! -d "${target_folder}" ]; then
+        git clone "${git_url}" "${target_folder}"
+    else
+        echo Skipping clone as folder "${target_folder}" exists.
+    fi
+}
+
+git_checkout() {
+    local target_tag="$1"
+    git checkout "${target_tag}"
+}

@@ -1,0 +1,42 @@
+" Tips:
+
+" Edit creates a new window which can be used for multple buffers.
+" Next, bg, fg are your friends.
+
+" Notes:
+
+" filec is the Tab key.	(Ctrl+V + Tab)
+" Lots of commands end with ^M which is the Enter key. (Ctrl+V + Enter)
+
+" Settings
+" ========
+
+set autoindent
+set cedit=?
+set columns=160
+set errorbells
+set filec=\	
+set noflash
+set nowrapscan
+set ruler
+set searchincr
+set showmatch
+set showmode
+set verbose
+
+" Keyboard Mappings
+" =================
+
+map q :q!
+map s :w!
+
+map gg :1
+
+" Leader Key
+" ==========
+
+map \\ :fg
+map \s :source $HOME/nvi.launcher
+
+map \d ok
+map \u Oj

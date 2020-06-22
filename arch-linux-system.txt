@@ -1,0 +1,154 @@
+A minimal Arch Linux desktop setup.
+
+Installation
+============
+
+Libraries
+=========
+
+    alsa-utils
+    base
+    base-devel
+    bdf-unifont
+    connman (network-manager)
+    dash
+    dhclient
+    dhcpcd
+    freetype2
+    fuse2
+    git
+    gnome-icon-theme
+    gvfs-mtp
+    linux
+    linux-firmware
+    man
+    mosh
+    ncurses
+    ntpd
+    slock
+    strace
+    ttf-dejavu
+    ttf-liberation
+    ttf-roboto
+    unzip
+    wget
+    xclip
+    xf86-video-fbdev
+    xorg-driver
+    xorg-fonts-misc
+    xorg-server
+    xorg-server-xephyr
+    xorg-xhost
+    xorg-xinit
+    xorg-xrandr
+    xsel
+    xsensors
+    xseticon
+    zip
+    zsh (shell)
+
+Applications
+============
+
+    atril (pdf-viewer) (djvu-viewer)
+    bmpanel2
+    2bwm (window-manager)
+    conky
+    docker (container)
+        portainer
+    fd (file-searcher)
+    featherpad (text-editor)
+    feh (image-viewer)
+    firefox (web-browser)
+    fzf (fuzzy-search)
+    ghc (programming-language)
+    gnu-netcat
+    google-chrome (web-browser)
+    id3
+    jre-openjdk
+    kitty (terminal-emulator)
+    llpp (pdf-viewer)
+    meld (diff-tool)
+    mkvtoolnix-gui (video-utility)
+    most (pager)
+    mpv (video-player)
+    moc (music-player)
+    mupdf (pdf-viewer)
+    nano
+    neovim
+        python-neovim
+    nvm
+    pychess
+    python (programming-language)
+    racket
+    ripgrep (grep)
+    rofi (launcher)
+    rsync
+    shellcheck
+    socat
+    stow
+    sublime-merge
+    sublime-text
+    tigervnc
+    tilix (terminal-emulator)
+    thunar
+        thunar-archive-plugin
+        thunar-media-tags-plugin
+    sthttpd (http-server)
+    tig
+    tk
+    unrar
+    rxvt-unicode
+        gtk2
+        gtk2-perl
+    visual-studio-code
+        libxss
+    vlc
+        libmicrodns (chromecast)
+        protobuf (chromecast)
+    yarn
+    yay (aur-helper)
+    youtube-dl
+    xdotool
+    xterm
+
+Research
+========
+
+    git-cola
+    hterm
+    Kivy
+    9wm (window-manager)
+    noVNC
+    observable
+    plan9port
+    rc (shell)
+    rio (window-manager)
+    theia
+    TinyCC
+    turbovnc
+    vis (text-editor)
+
+Settings
+========
+
+    Monospace Fonts: Dejavu Sans Mono, Liberation Mono, Lucida Console
+    Sans Fonts: Noto Sans, Roboto Sans
+    Disable netctl and enable connman.
+
+Troubleshooting
+===============
+
+    > Locale is not set as en_US.UTF-8.
+    # Do `localectl set-locale LANG=en_US.UTF-8` and reboot.
+
+Hacks
+=====
+
+    In Visual Studio Code, pacakge.json's `name` has been updated as `code`
+    which is also used for `WM_CLASS`.
+
+Links
+=====
+
+    https://suckless.org/rocks/

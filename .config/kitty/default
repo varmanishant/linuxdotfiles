@@ -1,0 +1,11 @@
+cd $HOME
+layout tall
+title nvim
+launch zsh -c nvim
+focus
+new_tab
+title vifm
+launch zsh -c vifm
+new_tab
+title mocp
+launch zsh -c mocp

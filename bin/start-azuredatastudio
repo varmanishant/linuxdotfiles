@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+
+start-silently \
+    "${APPS}"/azuredatastudio/azuredatastudio \
+    --extensionHomePath="${HOME}/.config/azuredatastudio/extensions"

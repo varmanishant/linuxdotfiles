@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+confirm-action "Reboot" "Do you want to reboot?" systemctl reboot

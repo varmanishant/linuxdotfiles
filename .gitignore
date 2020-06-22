@@ -1,0 +1,130 @@
+# This repository is intended to use as the home folder, so it whitelists
+# everything that is version-controlled. Folders that can be trusted are
+# completely whitelisted; others go through the same process! This can be
+# re-designed if required.
+
+# Ignore everything.
+
+/*
+
+# Normal files.
+
+!arch-linux-commands.txt
+!arch-linux-system.txt
+!plan9.txt
+!README.md
+
+# Hidden files.
+
+!.acme
+!.clang-format
+!.cwmrc
+!.fzfrc
+!.gitignore
+!.nexrc
+!.rcrc
+!.vimrc
+!.xinitrc
+!.xinitrc.2bwm
+!.xinitrc.rio
+!.Xresources
+!.zprofile
+!.zshrc
+
+# Safe normal folders.
+
+!bin/
+!cheatsheets/
+!windows
+
+# Safe hidden folders.
+
+!.icons/
+!.moc/
+!.unified/
+!.vim
+!.wallpapers/
+!.urxvt
+
+# Unsafe folders.
+
+# Config
+
+!.config/
+.config/*
+
+# Normal files.
+
+!.config/.fonts.conf
+
+# Safe folders in Config.
+
+!.config/conky/
+!.config/gtk-3.0/
+!.config/kitty/
+!.config/mpv/
+!.config/nvim/
+!.config/qutebrowser/
+!.config/rofi/
+!.config/tilix/
+!.config/tint2/
+!.config/vis/
+
+# Config => Cudatext
+
+!.config/cudatext/
+.config/cudatext/*
+!.config/cudatext/keys.json
+!.config/cudatext/user.json
+
+# Config => Cudatext
+
+!.config/qtile/
+.config/qtile/*
+!.config/qtile/config.py
+
+# Config => Sublime Text
+
+!.config/sublime-text-3/
+.config/sublime-text-3/*
+!.config/sublime-text-3/Packages/
+.config/sublime-text-3/Packages/*
+!.config/sublime-text-3/Packages/User/
+.config/sublime-text-3/Packages/User/*
+!.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+
+# Config => Visual Studio Code
+
+!.config/code/
+.config/code/*
+!.config/code/User/
+.config/code/User/*
+!.config/code/User/settings.json
+!.config/code/User/keybindings.json
+
+# Textadept
+
+!.textadept/
+.textadept/*
+!.textadept/init.lua
+!.textadept/session
+!.textadept/themes/
+
+# Theia
+
+!.theia/
+.theia/*
+!.theia/settings.json
+!.theia/keymaps.json
+
+# Unified
+
+!.unified/
+.unified/bundle
+
+# Vifm
+
+!.vifm/
+.vifm/*
+!.vifm/colors/
+!.vifm/vifmrc

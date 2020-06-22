@@ -1,0 +1,7 @@
+{
+  "font_size__linux" : 10,
+  "ui_theme" : "ebony",
+  "ui_theme_syntax" : "ebony",
+  "ui_sidebar_show" : false,
+  "ui_toolbar_show" : false
+}

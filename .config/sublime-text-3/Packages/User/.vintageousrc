@@ -1,0 +1,20 @@
+let mapleader=\
+
+nnoremap s :w<CR>
+nnoremap ]b :NextView<CR>
+nnoremap [b :PrevView<CR>
+nnoremap <leader>\ :NextViewInStack<CR>
+nnoremap <leader>b :GotoFiles<CR>
+nnoremap <leader>c :GotoPalette<CR>
+nnoremap <leader>d :AddLine<CR>
+nnoremap <leader>e :ToggleSideBar<CR>
+nnoremap <leader>f :GotoFiles<CR>
+nnoremap <leader>g :GsShowStatus<CR>
+nnoremap <leader>m :ToggleMenu<CR>
+nnoremap <leader>n :NewFile<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>r :SetReadOnly<CR>
+nnoremap <leader>s :ToggleSideBar<CR>
+nnoremap <leader>u :AddLineBefore<CR>
+nnoremap <leader>w :UnsetReadOnly<CR>
+nnoremap <leader>x :Close<CR>

@@ -1,0 +1,1 @@
+sudo micro /sys/class/backlight/intel_backlight/brightness

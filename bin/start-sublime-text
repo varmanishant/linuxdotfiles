@@ -1,0 +1,6 @@
+#!/usr/bin/dash
+
+start-silently \
+    "${APPS}"/sublime_text/sublime_text \
+    --class="sublime-text" \
+    "${@}"

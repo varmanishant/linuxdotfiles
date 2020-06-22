@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+title="${1}"; shift
+message="${1}"; shift
+
+action="${@}"
+
+confirm() {
+    gxmessage \
+        -title "${title}" \
+        -center -buttons yes,no \
+        -default no \
+        -print "${message}"
+}
+
+if [ $(confirm) == "yes" ]; then
+   ${action}
+fi

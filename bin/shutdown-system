@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+confirm-action "Shutdown" "Do you want to shutdown?" systemctl poweroff 

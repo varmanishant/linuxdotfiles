@@ -1,0 +1,3 @@
+#!/bin/dash
+
+start-silently transmission-gtk --class="transmission" "${@}"

@@ -1,0 +1,127 @@
+Acme
+====
+
+acme -m /mnt/acme
+
+Assembly
+========
+
+as --32 file.s -o file.o
+ld "-melf_i386" file.o -o file
+
+Bash
+====
+
+vim <(git log branch_one) <(git log branch_two)
+for i in *.avi; do ffmpeg -i "$i" "${i%.*}.mp4"; done
+
+Find
+====
+
+find . -path ./omit -prune -o -name '*.txt' -print
+
+Firewall
+========
+
+sudo firewall-cmd --permanent --add-port=8000/tcp
+sudo firewall-cmd --reload=> IPython
+
+Git
+===
+
+git commit -m "Something terribly misguided."
+git reset HEAD~
+=> << edit files as necessary >>
+git add ...
+git commit -c ORIG_HEAD
+
+Hyper-V
+=======
+
+Install dhcpcd, dhclient and tigervnc.
+
+MP3
+===
+
+id3tool -t "<song title>"
+ffmpeg -i "http://mixlr.com/broadcasts/{id}/playlist.m3u8" -c copy audio.aac
+
+Mpv
+===
+
+Shift + Left Click shows the Playlist
+
+Pacman
+======
+
+pacman -Cfsri  # cleanup up cache and unused dependencies
+pacman -R -s <package>  # remove unused dependencies
+
+Python
+======
+
+python -m SimpleHTTPServer 8000
+
+Qemu
+====
+
+qemu-system-x86_64 -boot d -cdrom boot.iso -m 512
+
+Qtcreator
+=========
+
+1. Use FakeVim by loading the appropriate vim configuration file.
+2. Use gitk and git gui.
+
+Socat
+=====
+
+socat STDIN STDOUT  # echo
+socat TCP-LISTEN:10000,crlf -  # watching
+socat TCP-LISTEN:10000,fork,reuseaddr TCP:google.com:443  # relay
+
+Sound
+=====
+
+alsamixer
+
+System
+======
+
+sudo dd if=linux.iso | sudo pv | sudo dd of=/dev/sdb
+xhost +local:  # sharing xserver for chroot
+export DISPLAY=:0  # chroot
+
+Theia
+=====
+
+yarn run start --hostname 0.0.0.0 --port 8080
+
+Packages can be downloaded manually and put in `plugins` folder.
+
+To redirect port 80 to 8080, see the `redirect-port` script.
+
+Touchpad
+========
+
+synclient TapButton1=0
+
+WPS Excel
+=========
+
+Tools=>Options=>View=>Gridlines Color=>Automatic
+
+WPS Office
+==========
+
+Tools->Options->View->Gridlines Color=Automatic
+
+Xargs
+=====
+
+cat branches | xargs -i{} -- sh -c 'git checkout {}; git cherry-pick 96f51c0'
+
+X Server
+========
+
+xwininfo -display :0

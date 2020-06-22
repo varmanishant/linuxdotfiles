@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+books='.*\.(pdf|epub|djvu|doc|odt|html|xhtml|txt)'
+
+dir="${HOME}"/data
+
+file=$(find "${dir}" -regextype posix-extended -regex "${books}" | fzf)
+
+if [ "${file}" ]; then
+    case "${file}" in
+        *.djvu )
+            start-silently zathura "${file}"
+            ;;
+        *.doc | *.odt )
+            start-silently wps "${file}"
+            ;;
+        *.epub ) 
+            start-silently llpp "${file}"
+            ;;
+        *.html | *.xhtml )
+            start-silently vimb "${file}"
+            ;;
+        *.pdf ) 
+            start-silently llpp "${file}"
+            ;;
+        *.txt )
+            start-silently start-text-editor "${file}"
+            ;;
+    esac
+fi

@@ -1,0 +1,7 @@
+#!/usr/bin/dash
+
+if ping -q -c 1 www.google.com >/dev/null 2>&1; then
+    echo "Ok"
+else
+    echo "Fail"
+fi

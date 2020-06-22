@@ -1,0 +1,148 @@
+" => Settings
+
+set fastrun
+set followlinks
+set fusehome=/tmp/vifm_fuse
+set history=10
+set ignorecase
+set incsearch
+set nohlsearch
+set noiec
+set norunexec
+set novimhelp
+set scrolloff=4
+set slowfs=curlftpfs
+set smartcase
+set sortnumbers
+set sort=+name
+set statusline='>'
+set trash
+set undolevels=100
+set vicmd=vim
+set viewcolumns=*{name}
+set wildmenu
+only
+
+" => Commands
+
+" :com[mand] name action
+" The following macros can be used in a command
+" %a is replaced with the user arguments.
+" %c the current file under the cursor.
+" %C the current file under the cursor in the other directory.
+" %f the current selected file, or files.
+" %F the current selected file, or files in the other directory.
+" %b same as %f %F.
+" %d the current directory name.
+" %D the other window directory name.
+" %m run the command in a menu window
+
+command df df -h %m 2> /dev/null
+command diff vim -d %f %F
+
+" => File Handlers
+
+" => Audio
+
+filetype *.m4a,*.mp3,*.ogg,*.wav,*.webm
+         \ mpv %f 2> /dev/null &
+
+" => Books
+
+filetype *.djvu
+         \ atril %f 2> /dev/null &
+
+filetype *.doc,*.docx
+         \ start-word %f 2> /dev/null &
+
+filetype *.htm,*.html,*.xhtml
+         \ qutebrowser %f 2> /dev/null &
+
+filetype *.pdf
+         \ llpp %f 2> /dev/null &
+
+filetype *.xls,*.xlsx
+         \ start-excel %f 2> /dev/null &
+
+" => Chess
+
+filetype *.pgn
+         \ pychess %f 2> /dev/null &,
+         \ featherpad %f 2> /dev/null &
+
+" => Pictures
+
+filetype *.bmp,*.gif,*.jpeg,*.jpg,*.png,*.xpm
+         \ feh %f 2> /dev/null &,
+         \ sxiv %f 2> /dev/null &
+
+" => Programming
+
+filetype *.pro
+         \ qtcreator %f 2> /dev/null &
+
+filetype *.c
+         \ nvim %f 2> /dev/null &
+
+" => Torrent
+
+filetype *.torrent
+         \ transmission %f 2> /dev/null &
+
+" => Video
+
+filetype *.3gp,*.avi,*.dat,*.flv,*.mkv,*.mp4,*.mpg,*.ogv,*.vob,*.wmv
+         \ mpv %f 2> /dev/null &,
+         \ mkvtoolnix-gui %f 2> /dev/null &
+
+" => Everything
+
+filetype *
+         \ thunar %f 2> /dev/null &
+
+" => Auto Commands
+
+autocmd DirEnter ~/Downloads setlocal sort=-mtime
+
+" => Mappings
+
+nmap - gh
+nmap i cw<c-a>
+nmap o :touch<space>
+nmap O :mkdir<space>
+nmap q :quit<CR>
+nmap s :shell<cr>
+nmap S :sort<cr>
+nmap t :!start-terminal &<cr>
+nmap w :file<space><tab>
+nmap cc cw<c-u>
+nmap gb :file &<cr>l
+nmap yd :!echo %d | xclip %i<cr>
+nmap yf :!echo %c:p | xclip %i<cr>
+
+" => Bookmarks
+
+mark h ~/
+mark l ~/linuxdotfiles
+mark n ~/notes
+mark w ~/Downloads
+mark d ~/data
+mark b ~/data/books
+mark a ~/data/audios
+mark v ~/data/videos
+mark u ~/data/unsynced
+mark s ~/data/staged
+mark c ~/data/current
+
+" => Colors
+
+colorscheme Default
+highlight Border ctermbg=0
+highlight CmdLine ctermbg=none
+highlight CurrLine ctermbg=none ctermfg=none cterm=reverse
+highlight ErrorMsg ctermbg=none ctermfg=15
+highlight StatusLine ctermbg=0 ctermfg=15
+highlight TopLine ctermbg=0 ctermfg=15
+highlight TopLineSel ctermbg=0 ctermfg=none
+highlight WildMenu ctermbg=none
+highlight Win ctermbg=0 ctermfg=none

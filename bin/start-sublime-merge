@@ -1,0 +1,6 @@
+#!/usr/bin/dash
+
+start-silently \
+    "${APPS}"/sublime_merge/sublime_merge \
+    --class="sublime-merge" \
+    "${@}"

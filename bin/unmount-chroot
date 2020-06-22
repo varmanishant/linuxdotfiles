@@ -1,0 +1,25 @@
+#!/usr/bin/dash
+
+rootfs=$1
+
+cd "${rootfs}"
+
+if mountpoint -q proc; then
+    sudo umount -lf proc
+fi
+
+if mountpoint -q sys; then
+    sudo umount -lf sys
+fi
+
+if mountpoint -q dev/pts; then
+    sudo umount -lf dev/pts
+fi
+
+if mountpoint -q dev/shm; then
+    sudo umount -lf dev/shm
+fi
+
+if mountpoint -q dev; then
+    sudo umount -lf dev
+fi

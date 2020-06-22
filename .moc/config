@@ -1,0 +1,11 @@
+Keymap = keymap
+
+ReadTags = no
+
+Layout1 = playlist(50%,50%,50%,50%)
+Layout2 = ""
+Layout3 = ""
+
+ASCIILines = no
+
+theme = minimal

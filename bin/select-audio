@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+audios='.*\.(m4a|mp2|mp3|ogg|wav|webm)'
+
+dir="${HOME}/data"
+
+file=$(find "${dir}" -regextype posix-extended -regex "${audios}" | fzf)
+
+if [ "${file}" ]; then
+    start-silently audacious -e "${file}"
+fi
+

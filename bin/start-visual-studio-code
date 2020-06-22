@@ -1,0 +1,6 @@
+#!/usr/bin/dash
+
+start-silently \
+    "${APPS}"/code/code \
+    --extensionHomePath="${HOME}/.config/code/extensions" \
+    "${@}"

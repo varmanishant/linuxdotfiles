@@ -1,0 +1,22 @@
+[
+    {
+        "command": "core.toggle.bottom.panel",
+        "keybinding": "ctrlcmd+`"
+    },
+    {
+        "command": "terminal:new:active:workspace",
+        "keybinding": "ctrlcmd+j"
+    },
+    {
+        "command": "workbench.action.showAllEditors",
+        "keybinding": "ctrlcmd+b"
+    },
+    {
+        "command": "workbench.action.showAllTerminals",
+        "keybinding": "ctrlcmd+'"
+    },
+    {
+        "command": "workspace:open",
+        "keybinding": "ctrlcmd+o"
+    }
+]
