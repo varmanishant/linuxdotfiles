@@ -61,7 +61,6 @@ sudo find /var/log/journal -name "*.journal" | xargs sudo rm -f
 
 rm -rf "${HOME}/.cache/"*
 rm -rf "${HOME}/.ghc/"
-rm -rf "${HOME}/.local/share/"
 rm -rf "${HOME}/.racket/"
 
 # Application Files
