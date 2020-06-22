@@ -3,15 +3,25 @@
 " Prerequisites
 " =============
 
-" External Programs
-" =================
+" Programs
+" ========
 
 " https://github.com/BurntSushi/ripgrep
 " https://github.com/jonas/tig
 " https://github.com/junegunn/fzf.git
 " https://github.com/universal-ctags/ctags
 
-" For plugins please see the Plugins section below.
+" Plugins
+" =======
+" https://github.com/cocopon/vaffle.vim.git
+" https://github.com/ctrlpvim/ctrlp.vim.git
+" https://github.com/junegunn/fzf.vim.git
+" https://github.com/tpope/vim-repeat.git
+" https://github.com/tpope/vim-surround.git
+" https://github.com/w0rp/ale.git
+" https://github.com/wellle/targets.vim.git
+
+" It should be present in the .unified/pack/bundle/start/ directory.
 
 " Notes
 " =====
@@ -175,18 +185,6 @@ nnoremap <C-Left> <C-T>
 
 " Plugins
 " =======
-" It should be present in either:
-
-" .vim/pack/bundle/start
-" .local/share/nvim/site/pack/*/start
-
-" https://github.com/cocopon/vaffle.vim.git
-" https://github.com/ctrlpvim/ctrlp.vim.git
-" https://github.com/junegunn/fzf.vim.git
-" https://github.com/tpope/vim-repeat.git
-" https://github.com/tpope/vim-surround.git
-" https://github.com/w0rp/ale.git
-" https://github.com/wellle/targets.vim.git
 
 syntax on
 filetype plugin indent on
