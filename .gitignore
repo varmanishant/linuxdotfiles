@@ -129,7 +129,7 @@
 # Unified
 
 !.unified/
-.unified/pack
+.unified/pack/
 
 # Vifm
 
