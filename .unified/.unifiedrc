@@ -1,5 +1,8 @@
 " vim: syntax=vim
 
+" Prerequisites
+" =============
+
 " External Programs
 " =================
 
@@ -7,6 +10,8 @@
 " https://github.com/jonas/tig
 " https://github.com/junegunn/fzf.git
 " https://github.com/universal-ctags/ctags
+
+" For plugins please see the Plugins section below.
 
 " Notes
 " =====
@@ -170,18 +175,19 @@ nnoremap <C-Left> <C-T>
 
 " Plugins
 " =======
+" It should be present in either:
 
-call plug#begin('$HOME/.unified/bundle')
-Plug 'https://github.com/cocopon/vaffle.vim.git'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
-Plug 'https://github.com/junegunn/fzf.vim.git'
-Plug 'https://github.com/junegunn/goyo.vim'
-Plug 'https://github.com/tpope/vim-repeat.git'
-Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'https://github.com/varmanishant/vim-python.git'
-Plug 'https://github.com/w0rp/ale.git'
-Plug 'https://github.com/wellle/targets.vim.git'
-call plug#end()
+" .vim/pack/bundle/start
+" .local/share/nvim/site/pack/*/start
+
+" https://github.com/cocopon/vaffle.vim.git
+" https://github.com/ctrlpvim/ctrlp.vim.git
+" https://github.com/junegunn/fzf.vim.git
+" https://github.com/tpope/vim-repeat.git
+" https://github.com/tpope/vim-surround.git
+" https://github.com/w0rp/ale.git
+" https://github.com/wellle/targets.vim.git
+
 syntax on
 filetype plugin indent on
 

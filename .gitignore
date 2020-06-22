@@ -102,6 +102,15 @@
 !.config/code/User/settings.json
 !.config/code/User/keybindings.json
 
+# Local
+
+!.local/
+.local/*
+
+# Local => Share
+
+!.local/share/
+
 # Textadept
 
 !.textadept/
@@ -120,7 +129,7 @@
 # Unified
 
 !.unified/
-.unified/bundle
+.unified/pack
 
 # Vifm
 
