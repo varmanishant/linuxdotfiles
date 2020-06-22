@@ -1,1 +1,0 @@
-/home/nishant/linuxdotfiles/.vim
