@@ -1,0 +1,14 @@
+[color]        
+    ui = false
+    branch = false
+    diff = false
+    interactive = false
+    status = false
+    log = false
+
+[core]
+	pager = cat
+
+[user]
+    email = nishant.varma@gmail.com
+    name = Nishant Varma

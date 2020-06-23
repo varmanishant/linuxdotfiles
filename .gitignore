@@ -20,6 +20,7 @@
 !.clang-format
 !.cwmrc
 !.fzfrc
+!.gitconfig
 !.gitignore
 !.nexrc
 !.rcrc
