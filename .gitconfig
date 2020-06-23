@@ -12,3 +12,5 @@
 [user]
     email = nishant.varma@gmail.com
     name = Nishant Varma
+[cola]
+	spellcheck = false
