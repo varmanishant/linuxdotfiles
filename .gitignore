@@ -78,7 +78,7 @@
 !.config/cudatext/keys.json
 !.config/cudatext/user.json
 
-# Config => Cudatext
+# Config => Qtile
 
 !.config/qtile/
 .config/qtile/*
@@ -108,9 +108,15 @@
 !.local/
 .local/*
 
-# Local => Share
+# Local => Share => Neovim
 
 !.local/share/
+.local/share/*
+!.local/share/nvim/
+.local/share/nvim/*
+!.local/share/nvim/site/
+.local/share/nvim/site/*
+!.local/share/nvim/site/pack/
 
 # Textadept
 
