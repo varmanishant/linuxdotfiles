@@ -26,6 +26,7 @@ Libraries
     ncurses
     ntpd
     slock
+    sshpass
     strace
     ttf-dejavu
     ttf-liberation
