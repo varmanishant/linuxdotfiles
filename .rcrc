@@ -18,12 +18,10 @@ fn fd {
     builtin fd --color never $*
 }
 
-fn g+ {
-    cmd='find -type f'
+fn s {
     if(git rev-parse --is-inside-work-tree >[1]/dev/null >[2]/dev/null)
-        cmd='git ls-files'
-    # FIXME: This doesn't work if there is are spaces in the file name.
-    eval $cmd | xargs g $*
+        git grep -n $*
+    if not grep -nr $*
 }
 
 fn ll {
