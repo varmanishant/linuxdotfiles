@@ -8,5 +8,6 @@ AlwaysBreakAfterReturnType: TopLevelDefinitions
 BinPackArguments: true
 BinPackParameters : true
 ColumnLimit: 79
+ContinuationIndentWidth: 4
 IndentWidth: 4
 SpacesBeforeTrailingComments: 2
