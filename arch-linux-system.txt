@@ -51,9 +51,11 @@ Libraries
 Applications
 ============
 
-    atril (pdf-viewer) (djvu-viewer)
-    bmpanel2
     2bwm (window-manager)
+    atril (pdf-viewer) (djvu-viewer)
+    black (code-formatter)
+    bmpanel2
+    clang-format (code-formatter)
     conky
     docker (container)
         portainer
