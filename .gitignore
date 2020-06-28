@@ -70,6 +70,7 @@
 !.config/tilix/
 !.config/tint2/
 !.config/vis/
+!.config/yapf/
 
 # Config => Cudatext
 
