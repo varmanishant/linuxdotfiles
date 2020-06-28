@@ -1,12 +1,12 @@
 BasedOnStyle: LLVM
 
-AlignAfterOpenBracket: DontAlign
+AlignAfterOpenBracket: AlwaysBreak
 AlignEscapedNewlines: DontAlign
 AlignTrailingComments: false
-AllowAllArgumentsOnNextLine: false
+AllowAllArgumentsOnNextLine: true
 AlwaysBreakAfterReturnType: TopLevelDefinitions
-BinPackArguments: true
-BinPackParameters : true
+BinPackArguments: false
+BinPackParameters : false
 ColumnLimit: 79
 ContinuationIndentWidth: 4
 IndentWidth: 4
