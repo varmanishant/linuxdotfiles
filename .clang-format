@@ -1,6 +1,6 @@
 BasedOnStyle: LLVM
 
-AlignAfterOpenBracket: AlwaysBreak
+AlignAfterOpenBracket: DontAlign
 AlignEscapedNewlines: DontAlign
 AlignTrailingComments: false
 AllowAllArgumentsOnNextLine: false
