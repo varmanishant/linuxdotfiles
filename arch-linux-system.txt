@@ -53,7 +53,6 @@ Applications
 
     2bwm (window-manager)
     atril (pdf-viewer) (djvu-viewer)
-    black (code-formatter)
     bmpanel2
     clang-format (code-formatter)
     conky
@@ -109,6 +108,7 @@ Applications
     vlc
         libmicrodns (chromecast)
         protobuf (chromecast)
+    yapf (code-formatter)
     yarn
     yay (aur-helper)
     youtube-dl
