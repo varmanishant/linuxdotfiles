@@ -15,7 +15,7 @@ NoMachine
 Notepad++
 PuTTy
 PDF Reader by Xodo
-PDFXchange Viewer
+PDF Xchange Viewer
 Sublime Text
 TigerVNC
 VcXsrv
