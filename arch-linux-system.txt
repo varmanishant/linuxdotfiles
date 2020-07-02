@@ -135,7 +135,7 @@ Research
 Settings
 ========
 
-    Monospace Fonts: Dejavu Sans Mono, Liberation Mono, Lucida Console
+    Monospace Fonts: Dejavu Sans Mono, Dina, Liberation Mono, Lucida Console
     Sans Fonts: Noto Sans, Roboto Sans
     Disable netctl and enable connman.
 
