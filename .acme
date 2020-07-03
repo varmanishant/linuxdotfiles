@@ -11,7 +11,8 @@ acme -m /mnt/acme .acme
 2. The escape key (ESC) will select the content typed since last mouse action.
    If it is pressed again, it will cut the text. This is very handy in `win` to
    re-execute a command.
-3. Fonts can be changed using the fontsrv command.
+3. `Edit =` will show the current line number.
+4. Fonts can be changed using the fontsrv command.
 
 # Commands
 
