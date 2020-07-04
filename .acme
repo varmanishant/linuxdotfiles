@@ -12,7 +12,8 @@ acme -m /mnt/acme .acme
    If it is pressed again, it will cut the text. This is very handy in `win` to
    re-execute a command.
 3. `Edit =` will show the current line number.
-4. Fonts can be changed using the fontsrv command.
+4. Scroll wheels can be used to expand and collapse `tags`.
+4. Fonts can be changed using the `fontsrv` command.
 
 # Commands
 
