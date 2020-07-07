@@ -21,7 +21,7 @@ acme -m /mnt/acme .acme
 
 "|fmt -w 79"    |sort
 
-cleanup-system    start-terminal
+cleanup-system    start-docker    start-terminal    stop-docker
 
 # Files
 
