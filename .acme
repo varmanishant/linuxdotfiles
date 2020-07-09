@@ -13,7 +13,8 @@ acme -m /mnt/acme .acme
    re-execute a command.
 3. `Edit =` will show the current line number.
 4. Scroll wheels can be used to expand and collapse `tags`.
-4. Fonts can be changed using the `fontsrv` command.
+5. You can middle-click on the filename to execute it.
+6. Fonts can be changed using the `fontsrv` command.
 
 # Commands
 
@@ -24,6 +25,9 @@ acme -m /mnt/acme .acme
 cleanup-system    start-docker    start-terminal    stop-docker
 
 update-system
+
+stop-docker ; cleanup-system ; lc /home/nishant/Downloads/
+echo Acme | xclip -i
 
 # Files
 
