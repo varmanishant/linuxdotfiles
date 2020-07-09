@@ -13,7 +13,8 @@ acme -m /mnt/acme .acme
    re-execute a command.
 3. `Edit =` will show the current line number.
 4. Scroll wheels can be used to expand and collapse `tags`.
-5. You can middle-click on the filename to execute it.
+5. You can middle-click on the filename to execute it; it will respect the
+    shebang header of the file.
 6. Fonts can be changed using the `fontsrv` command.
 
 # Commands
