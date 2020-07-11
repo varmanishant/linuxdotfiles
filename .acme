@@ -16,6 +16,7 @@ acme -m /mnt/acme .acme
 5. You can middle-click on the filename to execute it; it will respect the
     shebang header of the file.
 6. Fonts can be changed using the `fontsrv` command.
+7. unicode.8x13B.font can be used as the monospace font.
 
 # Commands
 
@@ -61,6 +62,7 @@ scratch/sync-directories/
 # Git
 
 git-cola
+git add -p
 git commit -m "Fixups"
 git push origin master:master
 
