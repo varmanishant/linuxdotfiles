@@ -6,17 +6,18 @@ acme -m /mnt/acme .acme
 # Tips
 
 1. Selecting brackets will select the content inside it. This can be useful for
-   grouping commands. But it is a good idea to create a single command for
-   commonly used functions.
+   grouping commands. However, it is a good idea to create a single command
+   for commonly used commang groups.
 2. The escape key (ESC) will select the content typed since last mouse action.
    If it is pressed again, it will cut the text. This is very handy in `win` to
    re-execute a command.
 3. `Edit =` will show the current line number.
 4. Scroll wheels can be used to expand and collapse `tags`.
 5. You can middle-click on the filename to execute it; it will respect the
-    shebang header of the file.
-6. Fonts can be changed using the `fontsrv` command.
-7. unicode.8x13B.font can be used as the monospace font.
+   shebang header of the file.
+6. `Send` can be used to send the clipboard content to `win`. This can be used
+   to send content from `tags`/`buffer` etc., to Shell, REPL etc.
+7. Fonts can be changed using the `fontsrv` command.
 
 # Commands
 
