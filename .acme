@@ -64,7 +64,7 @@ scratch/sync-directories/
 # Git
 
 git-cola
-git add -p
+win git add -p
 git commit -m "Fixups"
 git push origin master:master
 
