@@ -1,13 +1,13 @@
 dotfiles for a minimal linux system
 
 - distro: arch linux
-- wm: jwm
-- panel: tint2
-- launcher: rofi
+- wm: 2bwm
+- panel: bmpanel
+- launcher: dmenu
 - terminal: kitty, termite
-- shell: zsh
-- file manager: vifm, thunar, worker
-- editor: sublime, vim
+- shell: rc, zsh
+- file manager: vifm, thunar
+- editor: acme, sublime, vim
 - pdf: atril, llpp, zathura
 - audio: audacious, vlc
 - video: mpv
