@@ -30,8 +30,10 @@ cleanup-system    start-docker    start-terminal    stop-docker
 
 update-system
 
+{
 stop-docker ; cleanup-system ; lc /home/nishant/Downloads/
 echo Acme | xclip -i
+}
 
 # Files
 
