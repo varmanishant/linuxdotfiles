@@ -36,7 +36,8 @@
 
 !bin/
 !cheatsheets/
-!windows
+!scripts/
+!windows/
 
 # Safe hidden folders.
 
