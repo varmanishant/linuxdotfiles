@@ -20,6 +20,7 @@ Sublime Text
 TigerVNC
 VcXsrv
 WinDjView
+WinMerge
 WinSCP
 
 Settings
