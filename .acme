@@ -61,8 +61,6 @@ src/ed/
 src/bmpanel/
 src/plan9port/
 
-scratch/sync-directories/
-
 # Git
 
 git-cola
