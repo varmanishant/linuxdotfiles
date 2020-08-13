@@ -10,7 +10,13 @@ if not ctypes.windll.shell32.IsUserAnAdmin():
     print("Please run as administrator.")
     sys.exit()
 
-hosts = os.path.join("C:\\", "Windows", "System32", "drivers", "etc", "hosts")
+hosts = os.path.join(
+    os.environ["SystemRoot"]
+    "System32",
+    "Drivers",
+    "Etc",
+    "Hosts"
+)
 
 pattern = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
 
