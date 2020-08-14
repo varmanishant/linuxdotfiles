@@ -145,6 +145,11 @@ Troubleshooting
     > Locale is not set as en_US.UTF-8.
     # Do `localectl set-locale LANG=en_US.UTF-8` and reboot.
 
+Fixme
+=====
+
+Start docker using the `-it` flag sets `TERM=xterm` breaking Acme's `win`.
+
 Hacks
 =====
 
