@@ -4,11 +4,6 @@
 
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
-# => Alias
-
-alias ls="ls -L"
-alias ll="ls -lrt"
-
 # => Exports
 
 export PATH="${HOME}"/bin:"${PATH}"
