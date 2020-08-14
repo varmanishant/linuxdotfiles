@@ -1,15 +1,29 @@
-# => Libraries
+# Libraries
+# =========
 
 [[ -f /etc/bashrc ]] && source /etc/bashrc
 
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
-# => Exports
+# Unsets
+# ======
+
+unset LS_COLORS
+unset PROMPT_COMMAND
+
+# Unalias
+# =======
+
+unalias ls
+
+# Exports
+# =======
 
 export PATH="${HOME}"/bin:"${PATH}"
 export PS1="$ "
 
-# => Functions
+# Functions
+# =========
 
 function lazygit() {
     git add .
@@ -17,6 +31,7 @@ function lazygit() {
     git push
 }
 
-# => FZF
+# FZF
+# ===
 
 [[ -f $HOME/.fzf.bash ]] && source $HOME/.fzf.bash
