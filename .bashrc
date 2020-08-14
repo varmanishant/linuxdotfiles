@@ -14,7 +14,7 @@ unset PROMPT_COMMAND
 # Unalias
 # =======
 
-unalias ls
+unalias ls 1>/dev/null 2>/dev/null
 
 # Exports
 # =======
