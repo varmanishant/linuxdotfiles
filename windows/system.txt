@@ -7,7 +7,6 @@ AutoHotKey
 BreeZip
 Bulk Rename Utility
 Disk Genius
-FreeISOBurner
 FreeOffice
 HexChat
 Hyper-V
@@ -19,6 +18,7 @@ PDF Reader by Xodo
 PDF Xchange Viewer
 Sublime Text
 TigerVNC
+UNetbootin
 VcXsrv
 WebTorrent
 WinDjView
