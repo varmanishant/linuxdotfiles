@@ -7,6 +7,7 @@ AutoHotKey
 BreeZip
 Bulk Rename Utility
 Disk Genius
+FreeISOBurner
 FreeOffice
 HexChat
 Hyper-V
@@ -19,6 +20,7 @@ PDF Xchange Viewer
 Sublime Text
 TigerVNC
 VcXsrv
+WebTorrent
 WinDjView
 WinMerge
 WinSCP
