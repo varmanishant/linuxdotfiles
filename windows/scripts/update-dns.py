@@ -11,7 +11,7 @@ if not ctypes.windll.shell32.IsUserAnAdmin():
     sys.exit()
 
 hosts = os.path.join(
-    os.environ["SystemRoot"]
+    os.environ["SystemRoot"],
     "System32",
     "Drivers",
     "Etc",
