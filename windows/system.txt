@@ -16,6 +16,7 @@ Notepad++
 PuTTy
 PDF Reader by Xodo
 PDF Xchange Viewer
+Rufus
 Sublime Text
 TigerVNC
 VcXsrv
