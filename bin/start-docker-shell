@@ -4,7 +4,7 @@
 # FIXME: Race conditions can occur during container creation.
 
 if [[ $# -ne 2 ]]; then
-    echo "You need to supply the image and a container name."
+    echo "You need to supply an image and a container."
     exit
 fi
 
