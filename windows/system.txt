@@ -72,6 +72,11 @@ F8+z Minimize
    CompressLevel=1
    QualityLevel=9
 
+TurboVNC
+========
+
+Alt+Enter Fullscreen
+
 VcXsrv
 ======
 
