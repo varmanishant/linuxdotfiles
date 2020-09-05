@@ -80,12 +80,12 @@ Applications
     neovim
         python-neovim
     nvm
-    pychess
     python (programming-language)
     racket
     ripgrep (grep)
     rofi (launcher)
     rsync
+    scid (chess)
     shellcheck
     socat
     stow
