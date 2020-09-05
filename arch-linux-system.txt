@@ -54,6 +54,7 @@ Applications
     2bwm (window-manager)
     atril (pdf-viewer) (djvu-viewer)
     bmpanel2
+    chessx
     clang-format (code-formatter)
     conky
     docker (container)
