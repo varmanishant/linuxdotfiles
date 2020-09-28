@@ -1,0 +1,8 @@
+#!/usr/bin/dash
+
+docker run \
+    --interactive \
+    --rm \
+    --network host
+    --tty \
+    "${@}"
