@@ -3,6 +3,6 @@
 docker run \
     --interactive \
     --rm \
-    --network host
+    --network host \
     --tty \
     "${@}"
