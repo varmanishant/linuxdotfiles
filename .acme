@@ -24,7 +24,7 @@ acme -m /mnt/acme .acme
 
 9    fd    Font    g    "Indent on"    src    wc    win    winwatch
 
-"|fmt -w 79"    |sort
+"| fmt -w 79"    |sort
 
 cleanup-system    start-docker    start-terminal    stop-docker
 
