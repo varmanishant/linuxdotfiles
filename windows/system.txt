@@ -20,6 +20,7 @@ Rufus
 Sublime Text
 TigerVNC
 VcXsrv
+VLC Player
 WebTorrent
 WinDjView
 WinMerge
