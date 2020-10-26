@@ -4,7 +4,6 @@ SHELL=rc
 sign='> '
 
 fn a {
-
     # TODO: Should this folder be owned by the user?
     start-silently acme -m /mnt/acme $home/.acme
 }
@@ -22,12 +21,6 @@ fn fd {
     builtin fd --color never $*
 }
 
-fn s {
-    if(git rev-parse --is-inside-work-tree >[1]/dev/null >[2]/dev/null)
-        git grep -n $*
-    if not echo "Not implemented."
-}
-
 fn ll {
     ls -lrt
 }
@@ -40,6 +33,16 @@ fn pwd {
 
 fn python {
     builtin python -q $*
+}
+
+fn s {
+    if(git rev-parse --is-inside-work-tree >[1]/dev/null >[2]/dev/null)
+        git grep -n $*
+    if not echo "Not implemented."
+}
+
+fn shellcheck {
+    builtin shellcheck -f gcc $*
 }
 
 cd `{pwd}
