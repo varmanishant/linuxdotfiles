@@ -20,7 +20,7 @@ unalias ls 1>/dev/null 2>/dev/null
 # =======
 
 export PATH="${HOME}"/bin:"${PATH}"
-export PS1="\u@\h > "
+export PS1="\u@\h $ "
 
 # Functions
 # =========
