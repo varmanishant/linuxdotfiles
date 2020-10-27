@@ -1,4 +1,6 @@
-#!/usr/bin/dash
+#!/usr/bin/bash
+
+user=$1
 
 docker run \
     --env DISPLAY=$DISPLAY \
@@ -7,7 +9,8 @@ docker run \
     --network host \
     --privileged \
     --tty \
-    --volume $HOME/.Xauthority:$HOME/.Xauthority \
-    --volume $HOME:$HOME \
+    --user "$user" \
+    --volume $HOME/.Xauthority:/home/"$user"/.Xauthority \
+    --volume $HOME:/home/"$user" \
     --volume /tmp/.X11-unix:/tmp/.X11-unix \
-    "${@}"
+    "${@:2}"
