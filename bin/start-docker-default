@@ -9,4 +9,5 @@ docker run \
     --tty \
     --volume $HOME/.Xauthority:$HOME/.Xauthority \
     --volume $HOME:$HOME \
+    --volume /tmp/.X11-unix:/tmp/.X11-unix \
     "${@}"
