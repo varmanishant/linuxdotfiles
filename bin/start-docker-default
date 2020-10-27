@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+# TODO: Make this robust.
+
 user=$1
 
 docker run \
