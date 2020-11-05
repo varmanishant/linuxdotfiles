@@ -20,7 +20,8 @@ unalias ls 1>/dev/null 2>/dev/null
 # =======
 
 export PATH="${HOME}"/bin:"${PATH}"
-export PS1="\u@\h \w $ "
+export PROMPT_COMMAND="echo -n -e '\x1b[5 q'"
+export PS1="\u@\h \W $ "
 
 # Functions
 # =========
