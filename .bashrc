@@ -19,8 +19,10 @@ unalias ls 1>/dev/null 2>/dev/null
 # Exports
 # =======
 
-[[ $TERM == dumb ]] || export PROMPT_COMMAND="echo -n -e '\x1b[5 q'"
-export PS1="\h \W > "
+if [[ $TERM != dumb ]]; then
+    export PROMPT_COMMAND="echo -n -e '\x1b[5 q'"
+fi
+export PS1="\W (\h) $ "
 
 # Functions
 # =========
