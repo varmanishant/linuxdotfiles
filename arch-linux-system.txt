@@ -23,6 +23,7 @@ Libraries
     linux-firmware
     man
     mosh
+    mssql-cli
     ncurses
     ntpd
     slock
