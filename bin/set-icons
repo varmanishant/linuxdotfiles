@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 declare -A icons
 
@@ -26,13 +26,10 @@ icons=(
 ["xterm.XTerm"]="terminal-emulator.png"
 )
 
-base="${HOME}"
-
-for app in "${!icons[@]}"
+for application in "${!icons[@]}"
 do
-    for window in $(wmctrl -lx | grep "${app}" | awk '{print $1'})
+    for window in $(wmctrl -lx | grep "$application" | awk '{print $1}')
     do
-        # TODO: How to quote a hash-map correctly?
-        xseticon -id "${window}" "${base}"/.icons/${icons[$app]}
+        xseticon -id "$window" "$HOME"/.icons/"${icons[$application]}"
     done
 done
