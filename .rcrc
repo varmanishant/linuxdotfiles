@@ -35,6 +35,10 @@ fn python {
     builtin python -q $*
 }
 
+fn rg {
+    builtin rg --no-heading --line-number $*
+}
+
 fn s {
     if(git rev-parse --is-inside-work-tree >[1]/dev/null >[2]/dev/null)
         git grep -n $*
