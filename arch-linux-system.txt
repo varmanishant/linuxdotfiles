@@ -67,6 +67,7 @@ Applications
     ghc (programming-language)
     gnu-netcat
     google-chrome (web-browser)
+    highlight (code-beautifier)
     id3
     jre-openjdk
     kitty (terminal-emulator)
