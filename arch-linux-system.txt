@@ -10,6 +10,7 @@ Libraries
     base
     base-devel
     bdf-unifont
+    bindfs
     connman (network-manager)
     dash
     dhclient
