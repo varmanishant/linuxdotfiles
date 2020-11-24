@@ -13,9 +13,9 @@
 
 " Plugins
 " =======
-" https://github.com/cocopon/vaffle.vim.git
 " https://github.com/ctrlpvim/ctrlp.vim.git
 " https://github.com/junegunn/fzf.vim.git
+" https://github.com/troydm/easytree.vim.git
 " https://github.com/tpope/vim-repeat.git
 " https://github.com/tpope/vim-surround.git
 " https://github.com/w0rp/ale.git
@@ -151,8 +151,8 @@ nnoremap <Leader>a ggVG
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>c :close<CR>
 nnoremap <Leader>d o<Esc>k
-nnoremap <Leader>e :Vaffle<CR>
-nnoremap <Leader>E :Vaffle expand("%:p:h")<CR>
+nnoremap <Leader>e :EasyTree<CR>
+nnoremap <Leader>E :EasyTree %:p:h<CR>
 nnoremap <Leader>f :FZF<CR>
 nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>l :ALELint<CR>
