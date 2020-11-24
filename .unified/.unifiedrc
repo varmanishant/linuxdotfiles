@@ -151,8 +151,8 @@ nnoremap <Leader>a ggVG
 nnoremap <Leader>b :CtrlPBuffer<CR>
 nnoremap <Leader>c :close<CR>
 nnoremap <Leader>d o<Esc>k
-nnoremap <Leader>e :EasyTree<CR>
-nnoremap <Leader>E :EasyTree %:p:h<CR>
+nnoremap <Leader>e :EasyTreeToggle<CR>
+nnoremap <Leader>E :EasyTreeToggle %:p:h<CR>
 nnoremap <Leader>f :FZF<CR>
 nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>l :ALELint<CR>
