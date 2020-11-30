@@ -27,7 +27,11 @@ export PS1="\h:\W % "
 # Functions
 # =========
 
-function lazygit() {
+ll() {
+    ls -lrt
+}
+
+lazygit() {
     git add .
     git commit -a -m "$1"
     git push
