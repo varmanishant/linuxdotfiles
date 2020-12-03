@@ -22,7 +22,7 @@ unalias ls 1>/dev/null 2>/dev/null
 if [[ $TERM != dumb ]]; then
     export PROMPT_COMMAND="echo -n -e '\x1b[5 q'"
 fi
-export PS1="\h:\W % "
+export PS1="\W@\h % "
 
 # Functions
 # =========
