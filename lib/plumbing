@@ -1,0 +1,7 @@
+type is text
+data matches 'plumbing'
+data set /home/nishant/lib/plumbing
+attr add addr=1
+plumb to edit
+plumb client acme
+
