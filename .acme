@@ -13,13 +13,20 @@ acme -m /mnt/acme .acme
    If it is pressed again, it will cut the text. This is very handy in `win` to
    re-execute a command.
 3. `Edit =` will show the current line number.
-4. Scroll wheels can be used to expand and collapse `tags`.
-5. You can middle-click on the filename to execute it; it will respect the
+4. Sam language can be used to combine commands:
+   ```
+   Edit , {
+       d
+       c/\n
+   }
+   ```
+5. Scroll wheels can be used to expand and collapse `tags`.
+6. You can middle-click on the filename to execute it; it will respect the
    shebang header of the file.
-6. `Send` can be used to send the clipboard content to `win`. This can be used
+7. `Send` can be used to send the clipboard content to `win`. This can be used
    to send content from `tags`/`buffer` etc., to Shell, REPL etc.
-7. Fonts can be changed using the `fontsrv` command.
-8. You can make your own rules by creating a file called `$HOME/lib/plumbing`
+8. Fonts can be changed using the `fontsrv` command.
+9. You can make your own rules by creating a file called `$HOME/lib/plumbing`
    and starting the program called `plumber`.
 
 # Commands
