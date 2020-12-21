@@ -19,6 +19,7 @@ PDF Xchange Viewer
 Rufus
 Sublime Text
 TigerVNC
+Transmission
 VcXsrv
 VLC Player
 WebTorrent
