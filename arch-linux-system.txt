@@ -15,7 +15,7 @@ Libraries
     dash
     dhclient
     dhcpcd
-    exiftool
+    exiftool (metadata-manager)
     freetype2
     fuse2
     git
