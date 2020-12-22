@@ -21,8 +21,10 @@ acme -m /mnt/acme .acme
    }
    ```
 5. Scroll wheels can be used to expand and collapse `tags`.
-6. You can middle-click on the filename to execute it; it will respect the
-   shebang header of the file.
+6. Middle-click executes a content. If it is an Acme command like `Edit`, it
+   gets executed by Acme; else it gets executed by the shell. You can
+   middle-click on the filename in the tag to execute it (based on shebang).
+   If you are already in `win`, it just passes it to the running process!
 7. `Send` can be used to send the clipboard content to `win`. This can be used
    to send content from `tags`/`buffer` etc., to Shell, REPL etc.
 8. Fonts can be changed using the `fontsrv` command.
