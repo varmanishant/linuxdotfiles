@@ -3,6 +3,7 @@ Applications
 
 Adobe Digital Editions (EPub)
 Adobe Reader
+Aomei Partition Assistant
 AutoHotKey
 BreeZip
 Bulk Rename Utility
