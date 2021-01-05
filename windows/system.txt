@@ -13,7 +13,6 @@ HexChat
 Hyper-V
 MPV Player
 NoMachine
-Notepad++
 PuTTy
 PDF Reader by Xodo
 PDF Xchange Viewer
