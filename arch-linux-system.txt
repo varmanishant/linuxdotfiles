@@ -71,7 +71,7 @@ Applications
     google-chrome (web-browser)
     highlight (code-beautifier)
     id3
-    jailer (sql-browser)
+    jailer (sql-client)
     jre-openjdk
     kitty (terminal-emulator)
     llpp (pdf-viewer)
