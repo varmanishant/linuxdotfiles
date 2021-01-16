@@ -11,8 +11,8 @@ Disk Genius
 FreeOffice
 HexChat
 Hyper-V
+Java
 MPV Player
-NoMachine
 PuTTy
 PDF Reader by Xodo
 PDF Xchange Viewer
