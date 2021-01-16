@@ -38,7 +38,7 @@ git commit -c ORIG_HEAD
 Hyper-V
 =======
 
-Install dhcpcd, dhclient and tigervnc.
+Install dhcpcd, dhclient and turbovnc.
 
 MP3
 ===
