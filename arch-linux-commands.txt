@@ -110,7 +110,7 @@ Urxvt
 =====
 
 Ctrl + Alt will select vertically.
-Ctrl + Alt + C and V will copy and paste.
+Ctrl + Shift + C and V will copy and paste.
 
 WPS Excel
 =========
