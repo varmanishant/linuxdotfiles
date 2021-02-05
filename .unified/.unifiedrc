@@ -61,6 +61,7 @@ set laststatus=1
 set lazyredraw
 set noautochdir
 set nofoldenable
+set formatoptions-=t
 set nohlsearch
 set nonumber
 set noswapfile
