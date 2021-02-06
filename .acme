@@ -28,7 +28,9 @@ acme -m /mnt/acme .acme
 7. `Send` can be used to send the clipboard content to `win`. This can be used
    to send content from `tags`/`buffer` etc., to Shell, REPL etc.
 8. Fonts can be changed using the `fontsrv` command.
-9. You can make your own rules by creating a file called `$HOME/lib/plumbing`
+9. The rc environment functions are available in Acme, but needs to be
+   single-quoted.
+10. You can make your own rules by creating a file called `$HOME/lib/plumbing`
    and starting the program called `plumber`.
 
 # Commands
