@@ -17,6 +17,7 @@ PuTTy
 PDF Reader by Xodo
 PDF Xchange Viewer
 Rufus
+ScreenToGif
 Sublime Text
 TigerVNC
 Transmission
