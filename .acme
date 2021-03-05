@@ -30,8 +30,9 @@ acme -m /mnt/acme .acme
 8. Fonts can be changed using the `fontsrv` command.
 9. The rc environment functions are available in Acme, but needs to be
    single-quoted.
-10. You can make your own rules by creating a file called `$HOME/lib/plumbing`
-   and starting the program called `plumber`.
+10. You can make your own rules by creating a file called `$HOME/lib/plumbing`,
+    starting the program called `plumber` and updating it:
+   `cat $HOME/lib/plumbing | 9p write plumb/rules`
 
 # Commands
 
